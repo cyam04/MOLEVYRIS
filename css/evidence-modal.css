@@ -1,36 +1,42 @@
 /* ==========================================================================
    MOLEVYRIS — Scientific Evidence Deep-Dive Modal Styles
-   Interactive Laboratory Data & Analytical Validation Inspector
+   Standardized Pharmaceutical Quality Control & Method Validation Framework
+   Complies with ICH Q2(R2), USP <621>, USP <851>, and ALCOA+ Data Integrity
    ========================================================================== */
 
-.evidence-modal {
+/* 1. Modal Dialog Container — Hidden by default */
+dialog.evidence-modal {
+  display: none;
+}
+
+dialog.evidence-modal:not([open]) {
+  display: none !important;
+}
+
+dialog.evidence-modal[open] {
+  display: flex !important;
+  flex-direction: column;
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 16px;
   background: var(--paper-card);
   color: var(--ink);
   padding: 0;
-  max-width: 960px;
-  width: 92vw;
-  max-height: 88vh;
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4), var(--shadow-lg);
+  max-width: 1040px;
+  width: 94vw;
+  max-height: 90vh;
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.45), var(--shadow-lg);
   overflow: hidden;
   position: fixed;
   inset: 0;
   margin: auto;
-  z-index: 1100;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Modal Open / Close Transition */
-.evidence-modal[open] {
-  animation: modalEnter 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  z-index: 9999;
+  animation: modalEnter 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes modalEnter {
   from {
     opacity: 0;
-    transform: scale(0.96) translateY(12px);
+    transform: scale(0.97) translateY(10px);
   }
   to {
     opacity: 1;
@@ -38,17 +44,61 @@
   }
 }
 
-/* Backdrop Blur */
-.evidence-modal::backdrop {
-  background: rgba(11, 20, 17, 0.72);
+/* 2. Frosted Backdrop */
+dialog.evidence-modal::backdrop {
+  background: rgba(11, 20, 17, 0.78);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  transition: opacity 0.25s ease;
 }
 
-/* Modal Header */
+/* 3. Pharmaceutical Document Control Header */
+.doc-control-bar {
+  background: var(--paper-alt);
+  padding: 0.45rem 1.8rem;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: var(--muted);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.doc-control-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.doc-stamp {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--green);
+  background: var(--green-tint);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--green-tint-border);
+}
+
+.doc-control-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.doc-integrity-pill {
+  color: var(--green-emerald);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* 4. Modal Header */
 .modal-header {
-  padding: 1.5rem 1.8rem 1.2rem;
+  padding: 1.2rem 1.8rem 1rem;
   background: var(--paper);
   border-bottom: 1px solid var(--line);
   position: relative;
@@ -66,38 +116,54 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   flex-wrap: wrap;
 }
 
 .modal-badge {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 0.22rem 0.65rem;
+  padding: 0.2rem 0.65rem;
   border-radius: 20px;
   background: var(--green-tint);
   color: var(--green);
   border: 1px solid var(--green-tint-border);
 }
 
+.modal-sample-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(234, 179, 8, 0.12);
+  color: #b45309;
+  border: 1px solid rgba(234, 179, 8, 0.28);
+}
+
+[data-theme="dark"] .modal-sample-tag {
+  background: rgba(234, 179, 8, 0.18);
+  color: #facc15;
+  border-color: rgba(234, 179, 8, 0.35);
+}
+
 .modal-code-pill {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   color: var(--muted);
 }
 
 .modal-title {
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--ink);
   line-height: 1.25;
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.3rem;
 }
 
 .modal-subtitle {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--muted);
   line-height: 1.45;
   margin: 0;
@@ -115,7 +181,7 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.15s ease;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -127,22 +193,22 @@
   transform: scale(1.05);
 }
 
-/* Modal Nav Tabs */
+/* 5. Modal Nav Tabs (4 Tabs) */
 .modal-nav-tabs {
   display: flex;
   background: var(--paper-alt);
   border-bottom: 1px solid var(--line);
   padding: 0 1.5rem;
   overflow-x: auto;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .modal-tab-btn {
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
-  padding: 0.85rem 1rem;
-  font-size: 0.88rem;
+  padding: 0.8rem 1rem;
+  font-size: 0.84rem;
   font-weight: 600;
   color: var(--muted);
   cursor: pointer;
@@ -163,15 +229,38 @@
   background: var(--paper-card);
 }
 
-/* Modal Body */
+/* 6. Modal Body */
 .modal-body {
-  padding: 1.6rem 1.8rem;
+  padding: 1.4rem 1.8rem;
   overflow-y: auto;
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.3rem;
   background: var(--paper-card);
+}
+
+/* Academic Blueprint Notice Banner */
+.sample-notice-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.85rem 1.15rem;
+  border-radius: 10px;
+  background: rgba(23, 79, 67, 0.05);
+  border: 1px solid var(--green-tint-border);
+  color: var(--ink);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+[data-theme="dark"] .sample-notice-banner {
+  background: rgba(65, 184, 134, 0.08);
+}
+
+.sample-notice-icon {
+  font-size: 1.2rem;
+  line-height: 1.2;
 }
 
 .tab-pane {
@@ -194,7 +283,7 @@
   }
 }
 
-/* Visual Container (Chromatogram / Spectrum SVG) */
+/* 7. Visual Container */
 .evidence-visual-box {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -202,7 +291,6 @@
   padding: 1.2rem;
   position: relative;
   overflow: hidden;
-  margin-bottom: 1.4rem;
 }
 
 .evidence-visual-header {
@@ -210,6 +298,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .visual-legend {
@@ -222,8 +312,8 @@
 }
 
 .visual-dot {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background: var(--green-emerald);
   display: inline-block;
@@ -231,10 +321,10 @@
 }
 
 .visual-param-tag {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-family: ui-monospace, SFMono-Regular, monospace;
   background: var(--paper-card);
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.55rem;
   border-radius: 6px;
   border: 1px solid var(--line);
   color: var(--muted);
@@ -252,30 +342,29 @@
 .svg-chart-wrapper svg {
   width: 100%;
   height: auto;
-  min-height: 200px;
+  min-height: 190px;
   display: block;
 }
 
-/* KPI Highlights Grid */
+/* 8. KPI Highlights Grid */
 .kpi-stat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.9rem;
-  margin-bottom: 1.4rem;
+  gap: 0.85rem;
 }
 
 .kpi-stat-card {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 0.9rem 1.1rem;
+  padding: 0.85rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
 .kpi-label {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   color: var(--muted);
   font-weight: 600;
   text-transform: uppercase;
@@ -283,14 +372,14 @@
 }
 
 .kpi-value {
-  font-size: 1.35rem;
+  font-size: 1.28rem;
   font-weight: 700;
   color: var(--ink);
   font-family: ui-monospace, SFMono-Regular, monospace;
 }
 
 .kpi-status {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--green-emerald);
   font-weight: 600;
   display: flex;
@@ -298,19 +387,19 @@
   gap: 0.3rem;
 }
 
-/* Scientific Details Table inside Modal */
+/* 9. Scientific & Pharmaceutical Validation Matrix Table */
 .evidence-table-wrap {
   border: 1px solid var(--line);
   border-radius: 10px;
-  overflow: hidden;
+  overflow-x: auto;
   background: var(--paper-card);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.1rem;
 }
 
 .evidence-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   text-align: left;
 }
 
@@ -319,14 +408,15 @@
   padding: 0.7rem 1rem;
   color: var(--ink);
   font-weight: 600;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   border-bottom: 1px solid var(--line);
+  white-space: nowrap;
 }
 
 .evidence-table td {
-  padding: 0.75rem 1rem;
+  padding: 0.72rem 1rem;
   border-bottom: 1px solid var(--line-subtle);
   color: var(--ink);
   vertical-align: middle;
@@ -347,7 +437,27 @@
   font-weight: 600;
 }
 
-/* SOP Checklist Box */
+/* Compliance Status Badge */
+.status-pill-pass {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 12px;
+  background: rgba(60, 167, 124, 0.12);
+  color: var(--green);
+  border: 1px solid var(--green-tint-border);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+[data-theme="dark"] .status-pill-pass {
+  background: rgba(65, 184, 134, 0.16);
+  color: var(--green-light);
+}
+
+/* 10. SOP Checklist Box */
 .sop-checklist-card {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -357,7 +467,7 @@
 
 .sop-checklist-card h4 {
   margin: 0 0 0.8rem;
-  font-size: 0.96rem;
+  font-size: 0.94rem;
   font-weight: 700;
   color: var(--ink);
   display: flex;
@@ -371,16 +481,16 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.65rem;
 }
 
 .sop-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.6rem;
-  font-size: 0.88rem;
+  gap: 0.65rem;
+  font-size: 0.85rem;
   color: var(--ink);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .sop-check-icon {
@@ -390,9 +500,46 @@
   line-height: 1.2;
 }
 
-/* Modal Footer */
+/* 11. Laboratory Data Replacement Guide Box (Tab 4) */
+.template-guide-box {
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.template-guide-box h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.template-guide-box p {
+  margin: 0 0 0.9rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.code-guide-snippet {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.8rem;
+  color: var(--ink);
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+/* 12. Modal Footer */
 .modal-footer {
-  padding: 1rem 1.8rem;
+  padding: 0.95rem 1.8rem;
   background: var(--paper);
   border-top: 1px solid var(--line);
   display: flex;
@@ -406,6 +553,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  flex-wrap: wrap;
 }
 
 .modal-matrix-btn {
@@ -414,7 +562,7 @@
   border: 1px solid transparent;
   padding: 0.55rem 1.1rem;
   border-radius: 8px;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 600;
   cursor: pointer;
   display: inline-flex;
@@ -428,13 +576,33 @@
   transform: translateY(-1px);
 }
 
+.modal-print-btn {
+  background: var(--paper-alt);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.15s ease;
+}
+
+.modal-print-btn:hover {
+  background: var(--paper-card);
+  border-color: var(--muted);
+}
+
 .modal-dismiss-btn {
   background: var(--paper-alt);
   color: var(--ink);
   border: 1px solid var(--line);
   padding: 0.55rem 1.1rem;
   border-radius: 8px;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -445,36 +613,7 @@
   border-color: var(--muted);
 }
 
-/* Responsive Breakpoints */
-@media (max-width: 768px) {
-  .evidence-modal {
-    width: 96vw;
-    max-height: 94vh;
-    border-radius: 14px;
-  }
-
-  .modal-header {
-    padding: 1.2rem 1.2rem 1rem;
-  }
-
-  .modal-title {
-    font-size: 1.2rem;
-  }
-
-  .modal-body {
-    padding: 1.2rem;
-  }
-
-  .modal-footer {
-    padding: 0.9rem 1.2rem;
-  }
-
-  .kpi-stat-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* Button Reset for .project-action */
+/* 13. Button Reset for .project-action */
 button.project-action {
   width: 100%;
   background: transparent;
@@ -486,9 +625,143 @@ button.project-action {
   font-family: inherit;
   text-align: left;
   transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--green);
 }
 
 button.project-action:hover {
   color: var(--green-light);
   transform: translateX(2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  dialog.evidence-modal[open] {
+    width: 96vw;
+    max-height: 94vh;
+    border-radius: 14px;
+  }
+
+  .doc-control-bar {
+    padding: 0.4rem 1.1rem;
+    font-size: 0.68rem;
+  }
+
+  .modal-header {
+    padding: 1rem 1.1rem 0.85rem;
+  }
+
+  .modal-title {
+    font-size: 1.15rem;
+  }
+
+  .modal-body {
+    padding: 1.1rem;
+    gap: 1.1rem;
+  }
+
+  .modal-footer {
+    padding: 0.85rem 1.1rem;
+  }
+
+  .kpi-stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* ==========================================================================
+   PRINT STYLESHEET FOR PHARMACEUTICAL PROTOCOL INSPECTOR
+   Enables 1-click A4 PDF export of analytical SOP & validation matrix
+   ========================================================================== */
+@media print {
+  body > *:not(dialog.evidence-modal) {
+    display: none !important;
+  }
+
+  dialog.evidence-modal[open] {
+    display: block !important;
+    position: static !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    max-height: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .evidence-modal::backdrop {
+    display: none !important;
+  }
+
+  .modal-close-btn,
+  .modal-nav-tabs,
+  .modal-footer {
+    display: none !important;
+  }
+
+  .modal-body {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .tab-pane {
+    display: block !important;
+    page-break-inside: avoid;
+    margin-bottom: 2rem;
+  }
+
+  .doc-control-bar {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    padding: 0.5rem 1rem !important;
+  }
+
+  .modal-header {
+    background: #ffffff !important;
+    border-bottom: 2px solid #0f172a !important;
+    padding: 1rem 0 !important;
+  }
+
+  .evidence-visual-box,
+  .evidence-table-wrap,
+  .sop-checklist-card,
+  .template-guide-box {
+    background: #ffffff !important;
+    border: 1px solid #94a3b8 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  .evidence-table th {
+    background: #f8fafc !important;
+    color: #0f172a !important;
+    border-bottom: 1px solid #94a3b8 !important;
+  }
+
+  .evidence-table td {
+    color: #0f172a !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  .status-pill-pass {
+    background: #dcfce7 !important;
+    color: #166534 !important;
+    border: 1px solid #86efac !important;
+  }
+
+  .sample-notice-banner {
+    border: 1px solid #94a3b8 !important;
+    background: #f8fafc !important;
+    color: #0f172a !important;
+  }
 }
