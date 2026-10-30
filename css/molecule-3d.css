@@ -53,6 +53,47 @@
   cursor: grabbing;
 }
 
+/* Floating Animation Pause/Resume Control */
+.mol-anim-toggle {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.mol-anim-toggle:hover {
+  color: var(--ink);
+  background: var(--paper-card);
+  border-color: var(--green-tint-border);
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .mol-anim-toggle {
+  background: rgba(19, 36, 30, 0.82);
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+[data-theme="dark"] .mol-anim-toggle:hover {
+  background: var(--paper-card);
+  color: var(--ink);
+}
+
 /* Responsive Scaling for Canvas Stage */
 @media (max-width: 960px) {
   .hero-visual-col {
@@ -73,5 +114,11 @@
     max-width: 330px;
     min-height: 330px;
     height: 330px;
+  }
+  .mol-anim-toggle {
+    bottom: 4px;
+    right: 4px;
+    padding: 4px 9px;
+    font-size: 10.5px;
   }
 }

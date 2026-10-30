@@ -161,6 +161,10 @@
           <div class="hero-canvas-stage" id="moleculeStage"
             aria-label="Animated glass molecule discovery visualization">
             <canvas id="molecule3DCanvas" class="hero-mol-canvas"></canvas>
+            <button type="button" id="molAnimToggle" class="mol-anim-toggle" aria-label="Toggle 3D molecule motion" title="Pause / Resume animation">
+              <span id="molAnimIcon">&#9208;</span>
+              <span id="molAnimText">Pause Motion</span>
+            </button>
           </div>
         </div>
       </section>
@@ -601,15 +605,15 @@
               </div>
               <p class="tool-formula">M₁ · V₁ = M₂ · V₂</p>
               <div class="tool-input-group">
-                <label class="tool-input-label">Stock Molarity (M₁)</label>
+                <label class="tool-input-label" for="m1">Stock Molarity (M₁)</label>
                 <input type="number" id="m1" class="tool-input" value="1.0" step="0.1">
               </div>
               <div class="tool-input-group">
-                <label class="tool-input-label">Initial Volume (V₁ mL)</label>
+                <label class="tool-input-label" for="v1">Initial Volume (V₁ mL)</label>
                 <input type="number" id="v1" class="tool-input" value="10" step="1">
               </div>
               <div class="tool-input-group">
-                <label class="tool-input-label">Final Volume (V₂ mL)</label>
+                <label class="tool-input-label" for="v2">Final Volume (V₂ mL)</label>
                 <input type="number" id="v2" class="tool-input" value="100" step="1">
               </div>
               <button type="button" class="calc-btn" id="btnCalcDilution">Calculate M₂</button>
@@ -626,15 +630,15 @@
               </div>
               <p class="tool-formula">A = ε · c · l</p>
               <div class="tool-input-group">
-                <label class="tool-input-label">Absorbance (A)</label>
+                <label class="tool-input-label" for="blA">Absorbance (A)</label>
                 <input type="number" id="blA" class="tool-input" value="0.540" step="0.01">
               </div>
               <div class="tool-input-group">
-                <label class="tool-input-label">Molar Absorptivity (ε)</label>
+                <label class="tool-input-label" for="blE">Molar Absorptivity (ε)</label>
                 <input type="number" id="blE" class="tool-input" value="15000" step="100">
               </div>
               <div class="tool-input-group">
-                <label class="tool-input-label">Path Length (l cm)</label>
+                <label class="tool-input-label" for="blL">Path Length (l cm)</label>
                 <input type="number" id="blL" class="tool-input" value="1.0" step="0.1">
               </div>
               <button type="button" class="calc-btn" id="btnCalcBeer">Calculate Conc (c)</button>
@@ -651,11 +655,11 @@
               </div>
               <p class="tool-formula">Rf = d(solute) / d(front)</p>
               <div class="tool-input-group">
-                <label class="tool-input-label">Solute Distance (cm)</label>
+                <label class="tool-input-label" for="rfSolute">Solute Distance (cm)</label>
                 <input type="number" id="rfSolute" class="tool-input" value="3.8" step="0.1">
               </div>
               <div class="tool-input-group">
-                <label class="tool-input-label">Solvent Front (cm)</label>
+                <label class="tool-input-label" for="rfFront">Solvent Front (cm)</label>
                 <input type="number" id="rfFront" class="tool-input" value="6.5" step="0.1">
               </div>
               <button type="button" class="calc-btn" id="btnCalcRf">Calculate Rf</button>
@@ -672,11 +676,11 @@
               </div>
               <p class="tool-formula">% = (Actual / Theor.) × 100</p>
               <div class="tool-input-group">
-                <label class="tool-input-label">Actual Yield (g)</label>
+                <label class="tool-input-label" for="ydAct">Actual Yield (g)</label>
                 <input type="number" id="ydAct" class="tool-input" value="4.25" step="0.01">
               </div>
               <div class="tool-input-group">
-                <label class="tool-input-label">Theoretical Yield (g)</label>
+                <label class="tool-input-label" for="ydTheor">Theoretical Yield (g)</label>
                 <input type="number" id="ydTheor" class="tool-input" value="5.10" step="0.01">
               </div>
               <button type="button" class="calc-btn" id="btnCalcYield">Calculate %</button>

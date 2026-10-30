@@ -387,13 +387,64 @@
   }
 
   // -------------------------------------------------------------
-  // 9. Main Animation Loop with Tab Visibility Pause/Resume
+  // 9. Main Animation Loop with Pause/Resume & Reduced Motion
   // -------------------------------------------------------------
   var time = 0;
   var animId = null;
   var isTabHidden = false;
+  var isManuallyPaused = false;
+  var isOutOfView = false;
 
-  // Issue 02: Pause only when tab is truly hidden to save CPU/battery
+  // Accessible Reduced Motion Detection
+  var motionQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  var isReducedMotion = motionQuery ? motionQuery.matches : false;
+
+  if (motionQuery && motionQuery.addEventListener) {
+    motionQuery.addEventListener('change', function (e) {
+      isReducedMotion = e.matches;
+      updateToggleUI();
+    });
+  }
+
+  // On-Screen Pause/Resume Control
+  var animToggleBtn = document.getElementById('molAnimToggle');
+  var animToggleIcon = document.getElementById('molAnimIcon');
+  var animToggleText = document.getElementById('molAnimText');
+
+  function updateToggleUI() {
+    if (!animToggleBtn) return;
+    if (isManuallyPaused) {
+      if (animToggleIcon) animToggleIcon.textContent = 'â–¶';
+      if (animToggleText) animToggleText.textContent = 'Play Motion';
+      animToggleBtn.setAttribute('aria-label', 'Resume 3D molecule animation');
+    } else {
+      if (animToggleIcon) animToggleIcon.textContent = 'â¸';
+      if (animToggleText) animToggleText.textContent = isReducedMotion ? 'Calm Motion' : 'Pause Motion';
+      animToggleBtn.setAttribute('aria-label', 'Pause 3D molecule animation');
+    }
+  }
+
+  if (animToggleBtn) {
+    animToggleBtn.addEventListener('click', function () {
+      if (isManuallyPaused) {
+        isManuallyPaused = false;
+        updateToggleUI();
+        if (animId === null && !isTabHidden && !isOutOfView) {
+          animId = requestAnimationFrame(render);
+        }
+      } else {
+        isManuallyPaused = true;
+        updateToggleUI();
+        if (animId !== null) {
+          cancelAnimationFrame(animId);
+          animId = null;
+        }
+      }
+    });
+    updateToggleUI();
+  }
+
+  // Tab Visibility Change (Pauses when tab is hidden)
   document.addEventListener('visibilitychange', function () {
     if (document.hidden || document.visibilityState === 'hidden') {
       isTabHidden = true;
@@ -403,19 +454,44 @@
       }
     } else {
       isTabHidden = false;
-      if (animId === null) {
+      if (animId === null && !isManuallyPaused && !isOutOfView) {
         animId = requestAnimationFrame(render);
       }
     }
   });
 
+  // Intersection Observer (Pauses when scrolled out of viewport to save battery)
+  if ('IntersectionObserver' in window && stage) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) {
+          isOutOfView = true;
+          if (animId !== null) {
+            cancelAnimationFrame(animId);
+            animId = null;
+          }
+        } else {
+          isOutOfView = false;
+          if (animId === null && !isManuallyPaused && !isTabHidden) {
+            animId = requestAnimationFrame(render);
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(stage);
+  }
+
   function render() {
-    if (isTabHidden) return;
+    if (isTabHidden || isManuallyPaused || isOutOfView) {
+      animId = null;
+      return;
+    }
 
     ctx.clearRect(0, 0, W, H);
 
-    // Continuous dynamic motion & time progression
-    time += 0.018;
+    // Continuous dynamic motion (calm 0.005 step under prefers-reduced-motion)
+    var timeStep = isReducedMotion ? 0.005 : 0.018;
+    time += timeStep;
     var dark = isDark();
 
     // Smooth mouse inertia lerping
@@ -605,7 +681,7 @@
       ctx.fill();
     }
 
-    if (!isTabHidden) {
+    if (!isTabHidden && !isManuallyPaused && !isOutOfView) {
       animId = requestAnimationFrame(render);
     } else {
       animId = null;
@@ -818,7 +894,7 @@
   }
 
   // Kickstart loop
-  if (!isTabHidden) {
+  if (!isTabHidden && !isManuallyPaused && !isOutOfView) {
     animId = requestAnimationFrame(render);
   }
 

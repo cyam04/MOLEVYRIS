@@ -476,48 +476,7 @@ dialog.evidence-modal::backdrop {
   color: var(--green-light);
 }
 
-/* 10. SOP Checklist Box */
-.sop-checklist-card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 1.2rem 1.4rem;
-}
-
-.sop-checklist-card h4 {
-  margin: 0 0 0.8rem;
-  font-size: 0.94rem;
-  font-weight: 700;
-  color: var(--ink);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.sop-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.sop-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-  font-size: 0.85rem;
-  color: var(--ink);
-  line-height: 1.45;
-}
-
-.sop-check-icon {
-  color: var(--green-emerald);
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: 1.2;
-}
+/* Section 10: Cleaned */
 
 /* 11. Laboratory Data Replacement Guide Box (Tab 4) */
 .template-guide-box {
@@ -924,12 +883,5 @@ button.project-action:hover {
     padding: 1pt 4pt !important;
   }
 
-  .sop-checklist-card {
-    background: #ffffff !important;
-    border: 1px solid #94a3b8 !important;
-    page-break-inside: avoid;
-    break-inside: avoid;
-    margin-bottom: 10pt !important;
-    padding: 8pt 10pt !important;
-  }
+  
 }
