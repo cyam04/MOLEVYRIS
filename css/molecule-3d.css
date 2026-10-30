@@ -53,34 +53,36 @@
   cursor: grabbing;
 }
 
-/* Floating Animation Pause/Resume Control */
+/* Floating Circular Animation Pause/Play Control (Chhota Gol Button) */
 .mol-anim-toggle {
   position: absolute;
-  bottom: 8px;
-  right: 8px;
+  bottom: 12px;
+  right: 12px;
   z-index: 10;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px 11px;
-  border-radius: 20px;
-  font-size: 11.5px;
-  font-weight: 600;
+  justify-content: center;
+  padding: 0;
   background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--line);
   color: var(--muted);
   cursor: pointer;
-  transition: all 0.18s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  font-size: 13px;
+  line-height: 1;
 }
 
 .mol-anim-toggle:hover {
-  color: var(--ink);
+  color: var(--green);
   background: var(--paper-card);
   border-color: var(--green-tint-border);
-  transform: translateY(-1px);
+  transform: scale(1.08);
 }
 
 [data-theme="dark"] .mol-anim-toggle {
@@ -91,7 +93,7 @@
 
 [data-theme="dark"] .mol-anim-toggle:hover {
   background: var(--paper-card);
-  color: var(--ink);
+  color: var(--green-light);
 }
 
 /* Responsive Scaling for Canvas Stage */
@@ -116,9 +118,10 @@
     height: 330px;
   }
   .mol-anim-toggle {
-    bottom: 4px;
-    right: 4px;
-    padding: 4px 9px;
-    font-size: 10.5px;
+    bottom: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
   }
 }

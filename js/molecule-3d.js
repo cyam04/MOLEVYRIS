@@ -406,21 +406,20 @@
     });
   }
 
-  // On-Screen Pause/Resume Control
+    // On-Screen Pause/Resume Control (Single Circular Icon Button)
   var animToggleBtn = document.getElementById('molAnimToggle');
   var animToggleIcon = document.getElementById('molAnimIcon');
-  var animToggleText = document.getElementById('molAnimText');
 
   function updateToggleUI() {
-    if (!animToggleBtn) return;
+    if (!animToggleBtn || !animToggleIcon) return;
     if (isManuallyPaused) {
-      if (animToggleIcon) animToggleIcon.textContent = 'â–¶';
-      if (animToggleText) animToggleText.textContent = 'Play Motion';
-      animToggleBtn.setAttribute('aria-label', 'Resume 3D molecule animation');
+      animToggleIcon.textContent = '\u25B6';
+      animToggleBtn.setAttribute('aria-label', 'Play animation');
+      animToggleBtn.setAttribute('title', 'Play animation');
     } else {
-      if (animToggleIcon) animToggleIcon.textContent = 'â¸';
-      if (animToggleText) animToggleText.textContent = isReducedMotion ? 'Calm Motion' : 'Pause Motion';
-      animToggleBtn.setAttribute('aria-label', 'Pause 3D molecule animation');
+      animToggleIcon.textContent = '\u23F8';
+      animToggleBtn.setAttribute('aria-label', 'Pause animation');
+      animToggleBtn.setAttribute('title', 'Pause animation');
     }
   }
 
