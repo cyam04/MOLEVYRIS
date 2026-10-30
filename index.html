@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/molecule-3d.css">
+  <link rel="stylesheet" href="css/evidence-modal.css">
 </head>
 
 <body>
@@ -356,10 +357,10 @@
                 Chromatogram, calibration ($R^2 &gt; 0.999$), %RSD precision, LOD/LOQ calculation.
               </div>
             </div>
-            <a href="#matrix" class="project-action">
-              <span>View Method Details</span>
-              <span>↗</span>
-            </a>
+            <button type="button" class="project-action open-evidence-btn" data-project-id="hplc-assay">
+              <span>View Method Details &amp; Chromatogram</span>
+              <span>&#128300; &#8599;</span>
+            </button>
           </article>
 
           <!-- Project 2: Organic Structural Elucidation -->
@@ -379,10 +380,10 @@
                 ¹H/¹³C NMR spectral interpretation, FTIR functional groups, MS fragmentation pathways.
               </div>
             </div>
-            <a href="#matrix" class="project-action">
-              <span>View Spectral Profile</span>
-              <span>↗</span>
-            </a>
+            <button type="button" class="project-action open-evidence-btn" data-project-id="organic-elucidation">
+              <span>View Spectral Profile (NMR / FTIR / MS)</span>
+              <span>&#128300; &#8599;</span>
+            </button>
           </article>
 
           <!-- Project 3: UV-Vis & Thermal Analysis -->
@@ -402,10 +403,10 @@
                 UV-Vis absorption spectra, calibration curve, TGA/DSC thermograms, moisture report.
               </div>
             </div>
-            <a href="#matrix" class="project-action">
-              <span>View Assay Report</span>
-              <span>↗</span>
-            </a>
+            <button type="button" class="project-action open-evidence-btn" data-project-id="uv-thermal">
+              <span>View Assay Report &amp; Thermogram</span>
+              <span>&#128300; &#8599;</span>
+            </button>
           </article>
         </div>
       </section>
@@ -871,6 +872,7 @@
   <script src="js/search.js"></script>
   <script src="js/calculators.js"></script>
   <script src="js/molecule-3d.js"></script>
+  <script src="js/evidence-modal.js"></script>
 </body>
 
 </html>

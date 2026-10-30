@@ -1,0 +1,494 @@
+/* ==========================================================================
+   MOLEVYRIS — Scientific Evidence Deep-Dive Modal Styles
+   Interactive Laboratory Data & Analytical Validation Inspector
+   ========================================================================== */
+
+.evidence-modal {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper-card);
+  color: var(--ink);
+  padding: 0;
+  max-width: 960px;
+  width: 92vw;
+  max-height: 88vh;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4), var(--shadow-lg);
+  overflow: hidden;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modal Open / Close Transition */
+.evidence-modal[open] {
+  animation: modalEnter 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Backdrop Blur */
+.evidence-modal::backdrop {
+  background: rgba(11, 20, 17, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: opacity 0.25s ease;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 1.5rem 1.8rem 1.2rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.modal-header-info {
+  flex: 1;
+}
+
+.modal-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.modal-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.65rem;
+  border-radius: 20px;
+  background: var(--green-tint);
+  color: var(--green);
+  border: 1px solid var(--green-tint-border);
+}
+
+.modal-code-pill {
+  font-size: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: var(--muted);
+}
+
+.modal-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 0 0 0.35rem;
+}
+
+.modal-subtitle {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.modal-close-btn {
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.modal-close-btn:hover {
+  background: var(--green-tint);
+  color: var(--green);
+  border-color: var(--green-tint-border);
+  transform: scale(1.05);
+}
+
+/* Modal Nav Tabs */
+.modal-nav-tabs {
+  display: flex;
+  background: var(--paper-alt);
+  border-bottom: 1px solid var(--line);
+  padding: 0 1.5rem;
+  overflow-x: auto;
+  gap: 0.5rem;
+}
+
+.modal-tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.modal-tab-btn:hover {
+  color: var(--ink);
+}
+
+.modal-tab-btn.active {
+  color: var(--green);
+  border-bottom-color: var(--green);
+  background: var(--paper-card);
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 1.6rem 1.8rem;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: var(--paper-card);
+}
+
+.tab-pane {
+  display: none;
+  animation: tabFadeIn 0.2s ease forwards;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Visual Container (Chromatogram / Spectrum SVG) */
+.evidence-visual-box {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.4rem;
+}
+
+.evidence-visual-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.visual-legend {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visual-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green-emerald);
+  display: inline-block;
+  box-shadow: 0 0 8px var(--green-emerald);
+}
+
+.visual-param-tag {
+  font-size: 0.76rem;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  background: var(--paper-card);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.svg-chart-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  background: var(--paper-card);
+  border: 1px solid var(--line-subtle);
+  padding: 0.5rem;
+}
+
+.svg-chart-wrapper svg {
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  display: block;
+}
+
+/* KPI Highlights Grid */
+.kpi-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+
+.kpi-stat-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.kpi-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.kpi-value {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.kpi-status {
+  font-size: 0.76rem;
+  color: var(--green-emerald);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Scientific Details Table inside Modal */
+.evidence-table-wrap {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--paper-card);
+  margin-bottom: 1.2rem;
+}
+
+.evidence-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.evidence-table th {
+  background: var(--paper-alt);
+  padding: 0.7rem 1rem;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid var(--line);
+}
+
+.evidence-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--line-subtle);
+  color: var(--ink);
+  vertical-align: middle;
+}
+
+.evidence-table tr:last-child td {
+  border-bottom: none;
+}
+
+.evidence-table tr:hover td {
+  background: var(--paper-alt);
+}
+
+.table-code {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.82rem;
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* SOP Checklist Box */
+.sop-checklist-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+}
+
+.sop-checklist-card h4 {
+  margin: 0 0 0.8rem;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sop-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sop-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.sop-check-icon {
+  color: var(--green-emerald);
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 1rem 1.8rem;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.modal-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.modal-matrix-btn {
+  background: var(--green);
+  color: #ffffff;
+  border: 1px solid transparent;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.modal-matrix-btn:hover {
+  background: var(--green-deep);
+  transform: translateY(-1px);
+}
+
+.modal-dismiss-btn {
+  background: var(--paper-alt);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.modal-dismiss-btn:hover {
+  background: var(--paper-card);
+  border-color: var(--muted);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .evidence-modal {
+    width: 96vw;
+    max-height: 94vh;
+    border-radius: 14px;
+  }
+
+  .modal-header {
+    padding: 1.2rem 1.2rem 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.2rem;
+  }
+
+  .modal-body {
+    padding: 1.2rem;
+  }
+
+  .modal-footer {
+    padding: 0.9rem 1.2rem;
+  }
+
+  .kpi-stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Button Reset for .project-action */
+button.project-action {
+  width: 100%;
+  background: transparent;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-top: 1px solid var(--line-subtle);
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+button.project-action:hover {
+  color: var(--green-light);
+  transform: translateX(2px);
+}
