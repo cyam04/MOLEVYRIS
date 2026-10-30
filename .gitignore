@@ -1,0 +1,14 @@
+# Development scratch files and build scripts
+scratch/
+*.log
+
+# Old monolithic backups (keep safe locally, don't push to repo)
+index.backup.html
+index.backup_phase1_pre_migration.html
+index.html.bak
+
+# OS and Editor temp files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

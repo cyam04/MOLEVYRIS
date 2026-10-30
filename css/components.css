@@ -1,0 +1,1005 @@
+/* Hero Section — Two-Column Layout */
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+  padding: 28px 0 16px;
+  position: relative;
+}
+
+/* Foreground Content */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  background: var(--green-tint);
+  border: 1px solid var(--green-tint-border);
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 0.8px;
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #28a745;
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.8);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+.eyebrow-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(34px, 4.4vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  margin: 8px 0 12px;
+  color: var(--ink);
+}
+
+h1 span {
+  color: var(--green);
+}
+
+.hero-bio {
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.6;
+  max-width: 530px;
+  margin-bottom: 14px;
+}
+
+.hero-opportunity-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--green);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border: 1px solid var(--green);
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.22s ease;
+  cursor: pointer;
+}
+
+.button.primary {
+  background: var(--green);
+  color: #ffffff;
+  border-color: var(--green);
+}
+
+.button.primary:hover {
+  background: var(--green-deep);
+  border-color: var(--green-deep);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.button.secondary:hover {
+  transform: translateY(-2px);
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--green-tint);
+}
+
+/* Hero Identity Badge Strip */
+.hero-identity-strip {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero-identity-strip .phone-link {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.hero-identity-strip .phone-link:hover {
+  text-decoration: underline;
+}
+
+/* Candidate Factsheet Card (Matching Reference Layout) */
+.candidate-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.candidate-card:hover {
+  border-color: var(--green);
+  box-shadow: var(--shadow-md);
+}
+
+.card-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.card-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.card-status-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--green);
+  background: var(--green-tint);
+  padding: 3px 10px;
+  border-radius: 9999px;
+  border: 1px solid var(--green-tint-border);
+}
+
+.card-factsheet-link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card-factsheet-link:hover {
+  background: var(--green);
+  color: #ffffff;
+  border-color: var(--green);
+}
+
+.card-name {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.fact-table {
+  width: 100%;
+  font-size: 13px;
+  border-collapse: collapse;
+  margin-bottom: 18px;
+}
+
+.fact-table tr {
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.fact-table tr:last-child {
+  border-bottom: none;
+}
+
+.fact-table td {
+  padding: 8px 4px;
+  vertical-align: top;
+}
+
+.fact-key {
+  color: var(--muted);
+  width: 32%;
+  font-weight: 500;
+}
+
+.fact-val {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.fact-val strong {
+  color: var(--green);
+}
+
+.fact-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-subtle);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.fact-card-actions a {
+  color: var(--green);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.fact-card-actions a:hover {
+  text-decoration: underline;
+}
+
+/* 4-Column Quick Metrics / Highlights Strip */
+.highlights-strip {
+  padding: 10px 0 24px;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.highlight-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.highlight-card:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.highlight-icon {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--green);
+}
+
+.highlight-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+
+.highlight-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+/* Section Styling */
+section.content-section {
+  padding: 38px 0;
+  border-top: 1px solid var(--line);
+  transition: border-color 0.3s ease;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+h2 {
+  font-size: clamp(26px, 3.4vw, 36px);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-top: 6px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.section-intro {
+  max-width: 480px;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.58;
+}
+
+/* Section 1: Dual Cards (Education Snapshot + Laboratory Focus) */
+.dual-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.detail-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.detail-card:hover {
+  border-color: var(--green);
+  box-shadow: var(--shadow-md);
+}
+
+.detail-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: var(--green);
+}
+
+.detail-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.edu-timeline-item {
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.edu-timeline-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.edu-degree {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--green);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.edu-year {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--green-tint);
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.edu-institution {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 4px 0;
+}
+
+.edu-sub {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Skill Badges Cloud */
+.skills-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 20px;
+}
+
+.skill-chip {
+  background: var(--green-tint);
+  color: var(--green);
+  border: 1px solid var(--green-tint-border);
+  padding: 5px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.skill-chip:hover {
+  background: var(--green);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.glp-footer-note {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-subtle);
+  font-size: 12.5px;
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* Section 2: Selected Evidence (Projects) */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.project {
+  min-height: 320px;
+  padding: 26px 22px 22px;
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  border-color: var(--green);
+  box-shadow: var(--shadow-md);
+}
+
+.project-tag-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.project-badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  background: var(--green-tint);
+  color: var(--green);
+}
+
+.project-year {
+  font-size: 11.5px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.project h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.project-evidence-box {
+  background: var(--paper-alt);
+  border: 1px solid var(--line-subtle);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin: 10px 0 14px;
+  font-size: 11.5px;
+  color: var(--green);
+  font-weight: 600;
+}
+
+.project-evidence-box span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.project p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.project-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-subtle);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.project-action:hover {
+  text-decoration: underline;
+}
+
+/* Section 3: Interactive Skills & Analytical Matrix (Full 13 Skills Table) */
+.matrix-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 6px 16px;
+  border-radius: 9999px;
+  border: 1px solid var(--line);
+  background: var(--paper-card);
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.filter-btn.active {
+  background: var(--green);
+  color: #ffffff;
+  border-color: var(--green);
+}
+
+.matrix-table-wrap {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  text-align: left;
+}
+
+.matrix-table th {
+  background: var(--paper-alt);
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.matrix-table th.col-skill {
+  width: 20%;
+}
+
+.matrix-table th.col-project {
+  width: 40%;
+}
+
+.matrix-table th.col-evidence {
+  width: 40%;
+}
+
+.matrix-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line-subtle);
+  vertical-align: middle;
+}
+
+.matrix-table tr:last-child td {
+  border-bottom: none;
+}
+
+.matrix-table tr:hover {
+  background: var(--green-tint);
+}
+
+.skill-name-cell {
+  font-weight: 700;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.evidence-badge-tag {
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: var(--ink);
+}
+
+/* Section 4: Tools & Experiments (4 Working Live Calculators) */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.tool-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+}
+
+.tool-card:hover {
+  border-color: var(--green);
+  box-shadow: var(--shadow-sm);
+}
+
+.tool-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.tool-icon {
+  font-size: 18px;
+  color: var(--green);
+}
+
+.tool-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.tool-formula {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: monospace;
+  margin-bottom: 12px;
+}
+
+.tool-input-group {
+  margin-bottom: 10px;
+}
+
+.tool-input-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.tool-input {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 12.5px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.tool-input:focus {
+  border-color: var(--green);
+}
+
+.calc-btn {
+  width: 100%;
+  padding: 8px;
+  background: var(--green);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.2s ease;
+}
+
+.calc-btn:hover {
+  background: var(--green-deep);
+}
+
+.tool-result {
+  margin-top: 12px;
+  padding: 8px 10px;
+  background: var(--green-tint);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green);
+  text-align: center;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Section 5: From the Blog */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.blog-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--green);
+  box-shadow: var(--shadow-sm);
+}
+
+.blog-tag-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.blog-cat {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--green);
+  background: var(--green-tint);
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.blog-read-time {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.blog-card h3 {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.blog-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.blog-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-subtle);
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.blog-bottom-row a {
+  color: var(--green);
+}
+
+/* Section 6: Opportunity Banner */
+.opportunity-banner {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 26px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 18px 0 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.opp-text .status-pill {
+  margin-bottom: 8px;
+}
+
+.opp-text h3 {
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 6px 0;
+}
+
+.opp-text p {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 650px;
+  line-height: 1.55;
+}
+
+.opp-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px;
+}
+
+/* Section 7: Interested in working together? (Contact) */
+.contact-cta-section {
+  text-align: center;
+  padding: 30px 0 36px;
+}
+
+.contact-cta-section h2 {
+  font-size: clamp(28px, 3.8vw, 40px);
+  margin-bottom: 10px;
+}
+
+.contact-cta-section p {
+  color: var(--muted);
+  font-size: 15.5px;
+  max-width: 580px;
+  margin: 0 auto 20px;
+}
+
+.contact-btns {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.contact-direct-phone {
+  margin-top: 14px;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.contact-direct-phone strong {
+  color: var(--green);
+}
+
+/* Responsive Components */
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 50px 0 40px;
+    gap: 36px;
+  }
+
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dual-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunity-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 34px;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot {
+    animation: none !important;
+  }
+}
+

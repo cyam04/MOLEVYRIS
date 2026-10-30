@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f8f3">
+  <meta name="description"
+    content="MOLEVYRIS — Portfolio of Shyam Raj, Master of Science in Organic Chemistry (Mirza Ghalib College, Magadh University). Analytical laboratory research, HPLC validation, spectroscopy (NMR, FTIR, UV-Vis, MS), and computational chemistry tools.">
+  <meta name="author" content="Shyam Raj">
+  <title>Shyam Raj — Chemistry Professional with a Builder's Mindset | M.Sc. Organic Chemistry</title>
+
+  <!-- Modular Design System Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/molecule-3d.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand-wrap">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="8" cy="20" r="2.8" fill="currentColor" />
+              <circle cx="14" cy="8" r="2.8" fill="currentColor" />
+              <line x1="8" y1="20" x2="14" y2="8" />
+              <line x1="14" y1="8" x2="19" y2="17" />
+              <line x1="19" y1="17" x2="24" y2="8" />
+              <line x1="24" y1="8" x2="28" y2="20" />
+              <circle cx="19" cy="17" r="2.8" fill="currentColor" />
+              <circle cx="24" cy="8" r="2.8" fill="currentColor" />
+              <circle cx="28" cy="20" r="2.8" fill="currentColor" />
+            </svg>
+          </span>
+          <div class="brand-text">
+            <a class="brand" href="#home">MOLEVYRIS</a>
+            <span class="brand-tagline">Shyam Raj · M.Sc. Organic Chemistry</span>
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <a href="#home" class="active">About</a>
+          <a href="#research">Laboratory</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#matrix">Skills Matrix</a>
+          <a href="#tools">Tools</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-controls">
+          <button type="button" class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+            <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="icon-btn" id="searchBtn" aria-label="Search skills & projects" title="Search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <a href="#contact" class="btn-nav-action">
+            <span>Contact</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Search Drawer -->
+    <div id="searchDrawer" class="search-drawer">
+      <div class="container search-bar-inner">
+        <input type="text" id="projectSearchInput" class="search-input"
+          placeholder="Search skills, techniques or projects (e.g. HPLC, NMR, GC, Karl Fischer, TLC, UV-Vis)..."
+          aria-label="Search skills">
+        <button type="button" id="searchCloseBtn" class="search-close-btn" aria-label="Close search">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <div class="container">
+      <section class="hero" id="home">
+        <!-- Foreground Content (Left) -->
+        <div class="hero-content">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Open for Chemistry & R&D Opportunities</span>
+          </div>
+
+          <div class="eyebrow-container">
+            <p class="eyebrow">A Chemistry Portfolio · Shyam Raj</p>
+          </div>
+
+          <h1>Chemistry professional with a <span>builder's mindset.</span></h1>
+
+          <p class="hero-bio">
+            M.Sc. in Organic Chemistry candidate focused on research, laboratory analysis, and scientific work,
+            with additional practical expertise in analytical instrumentation, method validation, and chemical data
+            analysis.
+          </p>
+
+          <div class="hero-opportunity-line">
+            <span class="status-dot"></span>
+            <span>Currently exploring Chemistry & Laboratory-related roles</span>
+          </div>
+
+          <div class="actions">
+            <a href="#evidence" class="button primary">
+              <span>View Projects</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="factsheet.html" target="_blank" class="button secondary">Candidate Factsheet ↗</a>
+            <a href="#matrix" class="button secondary">Skills Matrix</a>
+            <a href="#contact" class="button secondary">Contact →</a>
+          </div>
+
+          <!-- Quick Identity Badge Row -->
+          <div class="hero-identity-strip">
+            <span>🎓 <strong>M.Sc. Organic Chemistry (2021–23)</strong></span>
+            <span>📍 <strong>Mirza Ghalib College · Magadh Univ.</strong></span>
+            <span>📞 <strong><a href="tel:+917782001734" class="phone-link">+91 7782001734</a></strong></span>
+          </div>
+        </div>
+
+        <!-- Right Column: Creative Glass Molecule Canvas Animation -->
+        <div class="hero-visual-col">
+          <div class="hero-canvas-stage" id="moleculeStage"
+            aria-label="Animated glass molecule discovery visualization">
+            <canvas id="molecule3DCanvas" class="hero-mol-canvas"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4-Column Quick Metrics Strip -->
+      <section class="highlights-strip">
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <div>
+              <div class="highlight-icon">🎓</div>
+              <h3 class="highlight-title">M.Sc. Chemistry</h3>
+              <p class="highlight-desc">2021–23 · Mirza Ghalib College (Magadh University)</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div>
+              <div class="highlight-icon">🔬</div>
+              <h3 class="highlight-title">Organic & Analytical</h3>
+              <p class="highlight-desc">Synthesis, Reaction Mechanisms & Quantitative Analysis</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div>
+              <div class="highlight-icon">🧪</div>
+              <h3 class="highlight-title">Research & Laboratory</h3>
+              <p class="highlight-desc">HPLC, GC, TLC, NMR, UV-Vis, GLP Standards</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div>
+              <div class="highlight-icon">📊</div>
+              <h3 class="highlight-title">Method Validation</h3>
+              <p class="highlight-desc">ICH Guidelines, %RSD Precision & LOD/LOQ Limits</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1: Chemistry & Laboratory Research (Dual Cards) -->
+      <section class="content-section" id="research">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Academic & Research Field</p>
+            <h2>Chemistry & Laboratory Research</h2>
+          </div>
+          <p class="section-intro">
+            M.Sc. Organic Chemistry candidate building expertise across academic laboratory research and analytical
+            method execution.
+          </p>
+        </div>
+
+        <div class="dual-card-grid">
+          <!-- Card 1: Candidate Factsheet Card -->
+          <div class="candidate-card">
+            <div class="card-top-bar">
+              <span class="card-label">Candidate Factsheet</span>
+              <a href="factsheet.html" target="_blank" class="card-status-badge card-factsheet-link" title="Open full printable factsheet">Full CV / Factsheet ↗</a>
+            </div>
+
+            <h3 class="card-name">Shyam Raj</h3>
+
+            <table class="fact-table">
+              <tbody>
+                <tr>
+                  <td class="fact-key">Education</td>
+                  <td class="fact-val">M.Sc. Organic Chemistry (2021–23)</td>
+                </tr>
+                <tr>
+                  <td class="fact-key">Institution</td>
+                  <td class="fact-val">Mirza Ghalib College, Gaya (823003)</td>
+                </tr>
+                <tr>
+                  <td class="fact-key">University</td>
+                  <td class="fact-val">Magadh University, Bodhgaya</td>
+                </tr>
+                <tr>
+                  <td class="fact-key">Undergrad</td>
+                  <td class="fact-val">B.Sc. Chemistry Honours (2018–21)</td>
+                </tr>
+                <tr>
+                  <td class="fact-key">Primary Focus</td>
+                  <td class="fact-val"><strong>Organic Synthesis & Instrumental Analysis</strong></td>
+                </tr>
+                <tr>
+                  <td class="fact-key">Core Techniques</td>
+                  <td class="fact-val">HPLC, GC, 1H/13C NMR, FTIR, UV-Vis, Mass Spec, Karl Fischer, AAS</td>
+                </tr>
+                <tr>
+                  <td class="fact-key">Location</td>
+                  <td class="fact-val">Gaya, Bihar (823003) · Open to Relocate</td>
+                </tr>
+                <tr>
+                  <td class="fact-key">Phone</td>
+                  <td class="fact-val"><strong>+91 7782001734</strong></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="fact-card-actions">
+              <a href="#matrix">
+                <span>📄 Full Analytical Matrix</span>
+              </a>
+              <a href="tel:+917782001734">Call Directly ↗</a>
+            </div>
+          </div>
+
+          <!-- Card 2: Academic Snapshot & Laboratory Focus -->
+          <div class="detail-card">
+            <div>
+              <div class="detail-card-header">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+                <h3 class="detail-card-title">Academic Snapshot & Focus</h3>
+              </div>
+
+              <div class="edu-timeline-item">
+                <div class="edu-degree">
+                  <span>M.Sc. in Organic Chemistry</span>
+                  <span class="edu-year">2021–2023</span>
+                </div>
+                <div class="edu-institution">Mirza Ghalib College, Gaya | Magadh University</div>
+                <p class="edu-sub">
+                  Organic synthesis, reaction mechanisms, stereochemistry, spectroscopy (NMR, IR, UV-Vis), reaction
+                  kinetics.
+                </p>
+              </div>
+
+              <div class="edu-timeline-item">
+                <div class="edu-degree">
+                  <span>B.Sc. in Chemistry Honours</span>
+                  <span class="edu-year">2018–2021</span>
+                </div>
+                <div class="edu-institution">Mirza Ghalib College, Gaya | Magadh University</div>
+                <p class="edu-sub">
+                  Physical, organic and inorganic quantitative laboratory practices and qualitative analysis.
+                </p>
+              </div>
+
+              <div class="skills-cloud">
+                <span class="skill-chip">HPLC (Method Validation)</span>
+                <span class="skill-chip">GC (VOC Analysis)</span>
+                <span class="skill-chip">1H & 13C NMR</span>
+                <span class="skill-chip">FTIR Spectroscopy</span>
+                <span class="skill-chip">UV-Vis (Beer-Lambert)</span>
+                <span class="skill-chip">Mass Spectrometry</span>
+                <span class="skill-chip">TLC / HPTLC</span>
+                <span class="skill-chip">Karl Fischer Titration</span>
+                <span class="skill-chip">Potentiometry</span>
+                <span class="skill-chip">Conductometry</span>
+                <span class="skill-chip">AAS Trace Metals</span>
+                <span class="skill-chip">ICP-OES/MS</span>
+                <span class="skill-chip">TGA / DSC Thermal</span>
+              </div>
+            </div>
+
+            <div class="glp-footer-note">
+              Rigorous adherence to Good Laboratory Practice (GLP) and calibration linearity ($R^2 &gt; 0.999$).
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Selected Evidence (Projects Showcase) -->
+      <section class="content-section" id="evidence">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Work & Projects</p>
+            <h2>Selected Evidence</h2>
+          </div>
+          <p class="section-intro">
+            Methodical practical work spanning chromatographic assay validation, multi-spectral structural elucidation,
+            and solution thermodynamics.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <!-- Project 1: HPLC Paracetamol Assay -->
+          <article class="project" data-title="HPLC Paracetamol Assay Method Validation Chromatogram">
+            <div>
+              <div class="project-tag-row">
+                <span class="project-badge">HPLC & Chromatography</span>
+                <span class="project-year">Analytical Study</span>
+              </div>
+              <h3>Paracetamol Assay + Method Validation</h3>
+              <p>
+                Quantitative determination and chromatographic validation of active pharmaceutical ingredient following
+                ICH validation parameters.
+              </p>
+              <div class="project-evidence-box">
+                <span>Deliverable Evidence</span>
+                Chromatogram, calibration ($R^2 &gt; 0.999$), %RSD precision, LOD/LOQ calculation.
+              </div>
+            </div>
+            <a href="#matrix" class="project-action">
+              <span>View Method Details</span>
+              <span>↗</span>
+            </a>
+          </article>
+
+          <!-- Project 2: Organic Structural Elucidation -->
+          <article class="project" data-title="NMR FTIR Mass Spectrometry Organic Structure Elucidation">
+            <div>
+              <div class="project-tag-row">
+                <span class="project-badge">Spectroscopy & Synthesis</span>
+                <span class="project-year">Structural Study</span>
+              </div>
+              <h3>Organic Compound Structural Elucidation</h3>
+              <p>
+                Multi-spectral confirmation of synthetic organic molecules using multi-nuclear NMR, infrared functional
+                groups, and mass spectrometry.
+              </p>
+              <div class="project-evidence-box">
+                <span>Deliverable Evidence</span>
+                ¹H/¹³C NMR spectral interpretation, FTIR functional groups, MS fragmentation pathways.
+              </div>
+            </div>
+            <a href="#matrix" class="project-action">
+              <span>View Spectral Profile</span>
+              <span>↗</span>
+            </a>
+          </article>
+
+          <!-- Project 3: UV-Vis & Thermal Analysis -->
+          <article class="project" data-title="UV-Vis Beer Lambert Law TGA DSC Thermal Analysis Karl Fischer">
+            <div>
+              <div class="project-tag-row">
+                <span class="project-badge">Quantitative & Thermal</span>
+                <span class="project-year">Assay & Stability</span>
+              </div>
+              <h3>Spectrophotometric Assay & Thermal Stability</h3>
+              <p>
+                Quantitative concentration determination using Beer-Lambert law coupled with thermal stability profiling
+                and Karl Fischer moisture verification.
+              </p>
+              <div class="project-evidence-box">
+                <span>Deliverable Evidence</span>
+                UV-Vis absorption spectra, calibration curve, TGA/DSC thermograms, moisture report.
+              </div>
+            </div>
+            <a href="#matrix" class="project-action">
+              <span>View Assay Report</span>
+              <span>↗</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 3: Interactive Skills & Analytical Matrix (Full 13 Skills Table) -->
+      <section class="content-section" id="matrix">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Complete Analytical Portfolio</p>
+            <h2>Skills & Evidence Matrix</h2>
+          </div>
+          <p class="section-intro">
+            Interactive breakdown of all 13 laboratory instrumentation and wet-chemistry techniques, associated research
+            projects, and tangible analytical evidence.
+          </p>
+        </div>
+
+        <div class="matrix-filters">
+          <button type="button" class="filter-btn active" data-filter="all">All Skills (13)</button>
+          <button type="button" class="filter-btn" data-filter="chromatography">Chromatography (3)</button>
+          <button type="button" class="filter-btn" data-filter="spectroscopy">Spectroscopy (4)</button>
+          <button type="button" class="filter-btn" data-filter="titrimetry">Titrimetry &amp; Electroanalytical
+            (3)</button>
+          <button type="button" class="filter-btn" data-filter="thermal">Elemental &amp; Thermal (3)</button>
+        </div>
+
+        <div class="matrix-table-wrap">
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th class="col-skill">Skill / Technique</th>
+                <th class="col-project">Project / Application</th>
+                <th class="col-evidence">Deliverable Evidence</th>
+              </tr>
+            </thead>
+            <tbody id="matrixTableBody">
+              <tr data-cat="chromatography">
+                <td>
+                  <div class="skill-name-cell">
+                    <span>🔬</span>
+                    <span>HPLC</span>
+                  </div>
+                </td>
+                <td>Paracetamol assay + method validation</td>
+                <td><span class="evidence-badge-tag">Chromatogram, calibration, %RSD, LOD/LOQ</span></td>
+              </tr>
+              <tr data-cat="chromatography">
+                <td>
+                  <div class="skill-name-cell">
+                    <span>💨</span>
+                    <span>GC</span>
+                  </div>
+                </td>
+                <td>Volatile organic compound analysis</td>
+                <td><span class="evidence-badge-tag">Chromatogram, retention-time analysis, calibration</span></td>
+              </tr>
+              <tr data-cat="chromatography">
+                <td>
+                  <div class="skill-name-cell">
+                    <span>🧪</span>
+                    <span>TLC / HPTLC</span>
+                  </div>
+                </td>
+                <td>Separation & identification of compounds</td>
+                <td><span class="evidence-badge-tag">TLC plate, Rf calculation, interpretation</span></td>
+              </tr>
+              <tr data-cat="spectroscopy">
+                <td>
+                  <div class="skill-name-cell">
+                    <span>🌈</span>
+                    <span>UV-Vis</span>
+                  </div>
+                </td>
+                <td>Quantitative determination using Beer-Lambert law</td>
+                <td><span class="evidence-badge-tag">Spectra, calibration curve, assay</span></td>
+              </tr>
+              <tr data-cat="spectroscopy">
+                <td>
+                  <div class="skill-name-cell">
+                    <span>📈</span>
+                    <span>FTIR</span>
+                  </div>
+                </td>
+                <td>Functional-group identification</td>
+                <td><span class="evidence-badge-tag">FTIR spectrum + interpretation</span></td>
+              </tr>
+              <tr data-cat="spectroscopy">
+                <td>
+                  <div class="skill-name-cell">
+                    <span>⚛️</span>
+                    <span>NMR</span>
+                  </div>
+                </td>
+                <td>Organic compound structural elucidation</td>
+                <td><span class="evidence-badge-tag">¹H/¹³C spectrum interpretation</span></td>
+              </tr>
+              <tr data-cat="spectroscopy">
+                <td>
+                  <div class="skill-name-cell">
+                    <span>⚡</span>
+                    <span>Mass Spectrometry</span>
+                  </div>
+                </td>
+                <td>Molecular mass & fragmentation analysis</td>
+                <td><span class="evidence-badge-tag">Mass spectrum + fragmentation pathway</span></td>
+              </tr>
+              <tr data-cat="titrimetry">
+                <td>
+                  <div class="skill-name-cell">
+                    <span>💧</span>
+                    <span>Karl Fischer</span>
+                  </div>
+                </td>
+                <td>Moisture determination</td>
+                <td><span class="evidence-badge-tag">Calculation + analytical report</span></td>
+              </tr>
+              <tr data-cat="titrimetry">
+                <td>
+                  <div class="skill-name-cell">
+                    <span>🔋</span>
+                    <span>Potentiometry</span>
+                  </div>
+                </td>
+                <td>Acid/base or ion determination</td>
+                <td><span class="evidence-badge-tag">Titration curve + endpoint</span></td>
+              </tr>
+              <tr data-cat="titrimetry">
+                <td>
+                  <div class="skill-name-cell">
+                    <span>🔌</span>
+                    <span>Conductometry</span>
+                  </div>
+                </td>
+                <td>Conductometric titration</td>
+                <td><span class="evidence-badge-tag">Conductance curve</span></td>
+              </tr>
+              <tr data-cat="thermal">
+                <td>
+                  <div class="skill-name-cell">
+                    <span>🔥</span>
+                    <span>AAS</span>
+                  </div>
+                </td>
+                <td>Trace metal analysis</td>
+                <td><span class="evidence-badge-tag">Calibration + concentration calculation</span></td>
+              </tr>
+              <tr data-cat="thermal">
+                <td>
+                  <div class="skill-name-cell">
+                    <span>💥</span>
+                    <span>ICP-OES / MS</span>
+                  </div>
+                </td>
+                <td>Multi-element analysis</td>
+                <td><span class="evidence-badge-tag">Elemental dataset + interpretation</span></td>
+              </tr>
+              <tr data-cat="thermal">
+                <td>
+                  <div class="skill-name-cell">
+                    <span>🌡️</span>
+                    <span>TGA / DSC</span>
+                  </div>
+                </td>
+                <td>Thermal stability analysis</td>
+                <td><span class="evidence-badge-tag">Thermogram + interpretation</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 4: Tools & Experiments (4 Working Live Interactive Calculators) -->
+      <section class="content-section" id="tools">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Laboratory Utilities</p>
+            <h2>Tools & Experiments</h2>
+          </div>
+          <p class="section-intro">
+            Interactive scientific utilities built for benchwork calculations, dilution kinetics, and spectrophotometry
+            quantification.
+          </p>
+        </div>
+
+        <div class="tools-grid">
+          <!-- Tool 1: Molar Dilution Calculator -->
+          <div class="tool-card">
+            <div>
+              <div class="tool-header">
+                <span class="tool-icon">⚗️</span>
+                <h3 class="tool-title">Molar Dilution</h3>
+              </div>
+              <p class="tool-formula">M₁ · V₁ = M₂ · V₂</p>
+              <div class="tool-input-group">
+                <label class="tool-input-label">Stock Molarity (M₁)</label>
+                <input type="number" id="m1" class="tool-input" value="1.0" step="0.1">
+              </div>
+              <div class="tool-input-group">
+                <label class="tool-input-label">Initial Volume (V₁ mL)</label>
+                <input type="number" id="v1" class="tool-input" value="10" step="1">
+              </div>
+              <div class="tool-input-group">
+                <label class="tool-input-label">Final Volume (V₂ mL)</label>
+                <input type="number" id="v2" class="tool-input" value="100" step="1">
+              </div>
+              <button type="button" class="calc-btn" id="btnCalcDilution">Calculate M₂</button>
+            </div>
+            <div class="tool-result" id="resDilution">Final M₂ = 0.100 M</div>
+          </div>
+
+          <!-- Tool 2: Beer-Lambert Law Calculator -->
+          <div class="tool-card">
+            <div>
+              <div class="tool-header">
+                <span class="tool-icon">🌈</span>
+                <h3 class="tool-title">Beer-Lambert</h3>
+              </div>
+              <p class="tool-formula">A = ε · c · l</p>
+              <div class="tool-input-group">
+                <label class="tool-input-label">Absorbance (A)</label>
+                <input type="number" id="blA" class="tool-input" value="0.540" step="0.01">
+              </div>
+              <div class="tool-input-group">
+                <label class="tool-input-label">Molar Absorptivity (ε)</label>
+                <input type="number" id="blE" class="tool-input" value="15000" step="100">
+              </div>
+              <div class="tool-input-group">
+                <label class="tool-input-label">Path Length (l cm)</label>
+                <input type="number" id="blL" class="tool-input" value="1.0" step="0.1">
+              </div>
+              <button type="button" class="calc-btn" id="btnCalcBeer">Calculate Conc (c)</button>
+            </div>
+            <div class="tool-result" id="resBeer">c = 3.60 × 10⁻⁵ M</div>
+          </div>
+
+          <!-- Tool 3: Rf Retention Factor Calculator -->
+          <div class="tool-card">
+            <div>
+              <div class="tool-header">
+                <span class="tool-icon">📜</span>
+                <h3 class="tool-title">TLC Rf Calc</h3>
+              </div>
+              <p class="tool-formula">Rf = d(solute) / d(front)</p>
+              <div class="tool-input-group">
+                <label class="tool-input-label">Solute Distance (cm)</label>
+                <input type="number" id="rfSolute" class="tool-input" value="3.8" step="0.1">
+              </div>
+              <div class="tool-input-group">
+                <label class="tool-input-label">Solvent Front (cm)</label>
+                <input type="number" id="rfFront" class="tool-input" value="6.5" step="0.1">
+              </div>
+              <button type="button" class="calc-btn" id="btnCalcRf">Calculate Rf</button>
+            </div>
+            <div class="tool-result" id="resRf">Rf Value = 0.58</div>
+          </div>
+
+          <!-- Tool 4: Chemical % Yield Calculator -->
+          <div class="tool-card">
+            <div>
+              <div class="tool-header">
+                <span class="tool-icon">⚖️</span>
+                <h3 class="tool-title">% Yield Calc</h3>
+              </div>
+              <p class="tool-formula">% = (Actual / Theor.) × 100</p>
+              <div class="tool-input-group">
+                <label class="tool-input-label">Actual Yield (g)</label>
+                <input type="number" id="ydAct" class="tool-input" value="4.25" step="0.01">
+              </div>
+              <div class="tool-input-group">
+                <label class="tool-input-label">Theoretical Yield (g)</label>
+                <input type="number" id="ydTheor" class="tool-input" value="5.10" step="0.01">
+              </div>
+              <button type="button" class="calc-btn" id="btnCalcYield">Calculate %</button>
+            </div>
+            <div class="tool-result" id="resYield">Yield = 83.33%</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: From the Blog -->
+      <section class="content-section" id="blog">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Notes & Writing</p>
+            <h2>From the Blog</h2>
+          </div>
+          <p class="section-intro">
+            Notes on chemistry, connecting analytical method validation, spectroscopy, and computational thinking.
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <div class="blog-card">
+            <div>
+              <div class="blog-tag-row">
+                <span class="blog-cat">Analytical Method</span>
+                <span class="blog-read-time">5 min read</span>
+              </div>
+              <h3>HPLC Method Validation: Practical Strategies for Achieving &lt;2% RSD</h3>
+              <p>
+                An overview of precision testing, mobile phase de-gassing, column equilibration, and establishing robust
+                LOD/LOQ limits under ICH Q2(R1).
+              </p>
+            </div>
+            <div class="blog-bottom-row">
+              <span>Chromatography</span>
+              <a href="#contact">Read Note →</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div>
+              <div class="blog-tag-row">
+                <span class="blog-cat">Spectroscopy</span>
+                <span class="blog-read-time">6 min read</span>
+              </div>
+              <h3>Deciphering Complex ¹H and ¹³C NMR Coupling in Synthetic Molecules</h3>
+              <p>
+                De-shielding effects, chemical shift predictions, and coupling constant ($J$) analysis for
+                distinguishing diastereomers and conformational isomers.
+              </p>
+            </div>
+            <div class="blog-bottom-row">
+              <span>Organic Structure</span>
+              <a href="#contact">Read Note →</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div>
+              <div class="blog-tag-row">
+                <span class="blog-cat">Wet Chemistry</span>
+                <span class="blog-read-time">4 min read</span>
+              </div>
+              <h3>Moisture Determination in Raw Materials: Karl Fischer vs Loss on Drying (LOD)</h3>
+              <p>
+                Comparative analysis of volumetric titration specificity versus thermal moisture desorption in
+                pharmaceutical raw materials and reagents.
+              </p>
+            </div>
+            <div class="blog-bottom-row">
+              <span>Quality Control</span>
+              <a href="#contact">Read Note →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Opportunity Banner -->
+      <div class="opportunity-banner">
+        <div class="opp-text">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Immediate Availability</span>
+          </div>
+          <h3>Currently exploring Chemistry-related opportunities</h3>
+          <p>
+            Interested in appointments including <strong>Quality Control (QC)</strong>, <strong>Quality Assurance
+              (QA)</strong>,
+            <strong>Analytical Chemist</strong>, <strong>R&D Synthetic Chemist</strong>, or <strong>Project Research
+              Fellow</strong>.
+            Gaya, Bihar (823003) · Open to relocation across India.
+          </p>
+        </div>
+        <div class="opp-actions">
+          <a href="tel:+917782001734" class="button primary">Call: +91 7782001734</a>
+          <a href="#contact" class="button secondary">Send Message</a>
+        </div>
+      </div>
+
+      <!-- Section 7: Interested in working together? -->
+      <section class="contact-cta-section" id="contact">
+        <h2>Interested in working together?</h2>
+        <p>
+          I welcome discussions regarding laboratory roles, research projects, analytical method execution, and
+          scientific opportunities.
+        </p>
+        <div class="contact-btns">
+          <a href="tel:+917782001734" class="button primary">
+            <span>Call +91 7782001734</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg>
+          </a>
+          <a href="mailto:shyamraj.chem@gmail.com" class="button secondary">
+            <span>Send Email</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+        <div class="contact-direct-phone">
+          Direct Contact: <strong>+91 7782001734</strong> · Mirza Ghalib College, Gaya, 823003
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">SHYAM RAJ</div>
+          <p class="footer-bio">
+            M.Sc. Organic Chemistry candidate (Mirza Ghalib College, Magadh University, 2021–23). Focused on research,
+            laboratory analysis, and scientific method execution.
+          </p>
+          <div class="status-pill footer-status-pill">
+            <span class="status-dot"></span>
+            <span>Open to Chemistry Opportunities</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#home">About</a></li>
+            <li><a href="#research">Laboratory</a></li>
+            <li><a href="#evidence">Evidence Projects</a></li>
+            <li><a href="#matrix">Skills Matrix</a></li>
+            <li><a href="#tools">Tools & Calculators</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Core Techniques</h4>
+          <ul>
+            <li><a href="#matrix">HPLC Validation</a></li>
+            <li><a href="#matrix">1H / 13C NMR</a></li>
+            <li><a href="#matrix">GC VOC Analysis</a></li>
+            <li><a href="#matrix">FTIR Functional Groups</a></li>
+            <li><a href="#matrix">TGA / DSC Stability</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <ul>
+            <li><a href="tel:+917782001734">Phone: +91 7782001734</a></li>
+            <li><a href="mailto:shyamraj.chem@gmail.com">Email Inquiries</a></li>
+            <li><span>Gaya, Bihar, 823003</span></li>
+            <li><span>Magadh University Alumni</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Shyam Raj · MOLEVYRIS Portfolio. All rights reserved.</span>
+        <span>Built with curiosity, chemistry & code.</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Modular JavaScript Engines -->
+  <script src="js/theme.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/calculators.js"></script>
+  <script src="js/molecule-3d.js"></script>
+</body>
+
+</html>

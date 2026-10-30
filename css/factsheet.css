@@ -1,0 +1,437 @@
+/* ==========================================================================
+   MOLEVYRIS — Standalone Candidate Factsheet & Printable CV Styles
+   ========================================================================== */
+
+/* Top Action Bar (Hidden in Print) */
+.factsheet-top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  margin-bottom: 28px;
+}
+
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--green-deep);
+  transform: translateX(-2px);
+}
+
+.top-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-print {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  background: var(--green);
+  color: #ffffff;
+  border: 1px solid var(--green);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.btn-print:hover {
+  background: var(--green-deep);
+  transform: translateY(-1.5px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Document Container */
+.factsheet-container {
+  max-width: 820px;
+  margin: 0 auto 48px;
+  padding: 0 20px;
+}
+
+.factsheet-paper {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 42px 48px;
+  box-shadow: var(--shadow-md);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Header Section */
+.doc-header {
+  border-bottom: 2px solid var(--green);
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.doc-name {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.doc-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+
+.doc-subtitle {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.contact-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  font-size: 12.5px;
+  color: var(--muted);
+  padding-top: 10px;
+  border-top: 1px solid var(--line-subtle);
+}
+
+.contact-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-meta-item a {
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-meta-item a:hover {
+  text-decoration: underline;
+}
+
+/* Factsheet Content Blocks */
+.doc-section {
+  margin-bottom: 26px;
+}
+
+.doc-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--green);
+  margin-bottom: 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.doc-section-title span.title-icon {
+  font-size: 16px;
+}
+
+/* Education Items */
+.edu-block {
+  margin-bottom: 14px;
+}
+
+.edu-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+.edu-degree {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.edu-year {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green);
+  background: var(--green-tint);
+  padding: 2px 10px;
+  border-radius: 9999px;
+  border: 1px solid var(--green-tint-border);
+}
+
+.edu-inst {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.edu-details {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Competency Grid */
+.competency-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.competency-card {
+  background: var(--paper-alt);
+  border: 1px solid var(--line-subtle);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.comp-category {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.comp-list {
+  font-size: 12.5px;
+  color: var(--ink);
+  line-height: 1.55;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.comp-list li {
+  margin-bottom: 3px;
+}
+
+/* Projects Table / Blocks */
+.project-summary-card {
+  background: var(--paper-alt);
+  border: 1px solid var(--line-subtle);
+  border-left: 3px solid var(--green);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.proj-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.proj-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.proj-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.proj-desc {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.proj-evidence {
+  font-size: 11.5px;
+  color: var(--green);
+  font-weight: 600;
+  background: var(--green-tint);
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* Compliance List */
+.compliance-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.compliance-pill {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  padding: 5px 12px;
+  border-radius: 9999px;
+}
+
+/* ==========================================================================
+   PRINT STYLESHEET (@media print)
+   Generates a pristine 1-2 page A4 PDF directly from the browser!
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm 14mm;
+  }
+
+  /* Hide screen-only interactive elements */
+  .factsheet-top-bar,
+  header,
+  footer,
+  .btn-print,
+  .icon-btn,
+  #themeToggle,
+  .back-link {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .factsheet-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .factsheet-paper {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .doc-header {
+    border-bottom: 2pt solid #174f43 !important;
+    padding-bottom: 12pt !important;
+    margin-bottom: 16pt !important;
+  }
+
+  .doc-name {
+    color: #0e372e !important;
+    font-size: 24pt !important;
+  }
+
+  .doc-title {
+    color: #174f43 !important;
+    font-size: 13pt !important;
+  }
+
+  .doc-subtitle {
+    color: #444444 !important;
+    font-size: 10.5pt !important;
+  }
+
+  .contact-meta-row {
+    color: #444444 !important;
+    border-top: 1pt solid #cccccc !important;
+  }
+
+  .contact-meta-item a {
+    color: #174f43 !important;
+    text-decoration: none !important;
+  }
+
+  .doc-section {
+    margin-bottom: 16pt !important;
+    break-inside: avoid;
+  }
+
+  .doc-section-title {
+    color: #174f43 !important;
+    border-bottom: 1pt solid #dddddd !important;
+    font-size: 11pt !important;
+  }
+
+  .competency-card,
+  .project-summary-card {
+    background: #fbfbfb !important;
+    border: 1pt solid #e0e0e0 !important;
+    break-inside: avoid;
+  }
+
+  .project-summary-card {
+    border-left: 3pt solid #174f43 !important;
+  }
+
+  .proj-evidence {
+    background: #eef5f2 !important;
+    color: #0e372e !important;
+  }
+
+  .edu-year {
+    background: #eef5f2 !important;
+    color: #174f43 !important;
+    border: 1pt solid #b8dfd4 !important;
+  }
+
+  .compliance-pill {
+    background: #f6f6f6 !important;
+    border: 1pt solid #dddddd !important;
+    color: #222222 !important;
+  }
+}
+
+/* Responsive screen styles */
+@media screen and (max-width: 680px) {
+  .factsheet-paper {
+    padding: 24px 20px;
+  }
+  .competency-grid {
+    grid-template-columns: 1fr;
+  }
+  .doc-name {
+    font-size: 26px;
+  }
+  .edu-header-row,
+  .proj-head {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
