@@ -488,7 +488,7 @@ h2 {
 /* Section 2: Selected Evidence (Projects) */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 22px;
 }
 
@@ -504,6 +504,17 @@ h2 {
   transition: all 0.25s ease;
   cursor: pointer;
   position: relative;
+}
+
+.project.project-featured {
+  border-color: rgba(22, 101, 52, 0.45);
+  background: linear-gradient(180deg, rgba(22, 101, 52, 0.05) 0%, var(--paper-card) 32%);
+  box-shadow: 0 4px 14px rgba(22, 101, 52, 0.06);
+}
+
+[data-theme="dark"] .project.project-featured {
+  border-color: rgba(74, 222, 128, 0.35);
+  background: linear-gradient(180deg, rgba(22, 101, 52, 0.18) 0%, var(--paper-card) 32%);
 }
 
 .project:hover {

@@ -17,6 +17,390 @@
 
   // Comprehensive Pharmaceutical Evidence Data Matrix
   const evidenceData = {
+    'khp-standardization': {
+      protocolNo: 'SOP-QC-TIT-2026-001',
+      rev: 'Rev 01 (Verified ChemCollective Dataset)',
+      regulatory: 'USP <541> Titrimetry Â· 21 CFR Part 11 ALCOA+ Audit',
+      title: 'Standardization of NaOH using Primary Standard KHP',
+      badge: 'Volumetric Titrimetry & QA/QC',
+      sampleTag: 'Verified Student Practical 01',
+      code: 'USP <541> Â· ChemCollective Virtual Lab',
+      subtitle: 'Quantitative standardization of ~1.0 M NaOH titrant against primary standard potassium hydrogen phthalate (KHP, 0.500 M) with three-trial pH potentiometric curve tracking, double volume-balance reconciliation, and comprehensive data integrity review.',
+      categoryFilter: 'titrimetry',
+      sampleNotice: '<strong>Verified Laboratory Practical 01:</strong> Conducted and documented by Shyam Raj (M.Sc. Organic Chemistry) using the ChemCollective Virtual Analytical Laboratory. Captures 171 individual addition points across three distinct increment resolutions (0.500 mL, 0.100 mL, and 0.050 mL) with double volume-balance reconciliation, stoichiometric calculations, and full ALCOA+ data integrity review.',
+      tabLabels: [
+        '<span>ðŸ“Š</span> Titration Curves & Profile',
+        '<span>âš™ï¸</span> Stoichiometry & Volume Balance',
+        '<span>âœ…</span> QA/QC Data Integrity & Gallery',
+        '<span>ðŸ“</span> ELN Report & Master Downloads'
+      ],
+      kpis: [
+        { label: 'Mean Apparent Conc. (NaOH)', value: '0.9320 M', status: 'âœ“ Verified (0.931961 mol/L)' },
+        { label: 'Repeatability Precision (%RSD)', value: '2.13%', status: 'âœ“ s = 0.0198 M (n=3 Trials)' },
+        { label: 'Concordant Endpoint Titre', value: '5.300 mL', status: 'âœ“ Trial 2 & 3 Exact Match' },
+        { label: 'Volume Balance Audit', value: '100% Agreement', status: 'âœ“ Burette Î”V = Flask Î”V = 5.300 mL' }
+      ],
+      visualTitle: '3-Trial Potentiometric Titration Curves (pH vs NaOH Volume Added)',
+      visualParam: 'KHP Aliquot: 10.000 mL (0.500 M) Â· Phenolphthalein: 0.300 mL Â· Burette: 10.000 mL Â· 171 Data Points',
+      svgGraphic: 
+        <svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" style="background: var(--paper-card); font-family: ui-monospace, monospace;">
+          <!-- Grid Lines (pH 2, 4, 6, 8, 10, 12, 14) -->
+          <line x1="55" y1="35" x2="705" y2="35" stroke="var(--line-subtle)" stroke-dasharray="3 3"/>
+          <line x1="55" y1="67" x2="705" y2="67" stroke="var(--line-subtle)" stroke-dasharray="3 3"/>
+          <line x1="55" y1="98" x2="705" y2="98" stroke="var(--line-subtle)" stroke-dasharray="3 3"/>
+          <line x1="55" y1="130" x2="705" y2="130" stroke="var(--line-subtle)" stroke-dasharray="3 3"/>
+          <line x1="55" y1="162" x2="705" y2="162" stroke="var(--line-subtle)" stroke-dasharray="3 3"/>
+          <line x1="55" y1="193" x2="705" y2="193" stroke="var(--line-subtle)" stroke-dasharray="3 3"/>
+          <line x1="55" y1="225" x2="705" y2="225" stroke="var(--line)" stroke-width="1.5"/>
+
+          <!-- Y Axis Labels (pH) -->
+          <text x="46" y="39" text-anchor="end" font-size="10" fill="var(--muted)">14.0</text>
+          <text x="46" y="71" text-anchor="end" font-size="10" fill="var(--muted)">12.0</text>
+          <text x="46" y="102" text-anchor="end" font-size="10" fill="var(--muted)">10.0</text>
+          <text x="46" y="134" text-anchor="end" font-size="10" fill="var(--muted)">8.0</text>
+          <text x="46" y="166" text-anchor="end" font-size="10" fill="var(--muted)">6.0</text>
+          <text x="46" y="197" text-anchor="end" font-size="10" fill="var(--muted)">4.0</text>
+          <text x="46" y="229" text-anchor="end" font-size="10" fill="var(--muted)">2.0</text>
+
+          <!-- Phenolphthalein Transition Interval Band (pH 8.2 - 10.0) -->
+          <rect x="55" y="98.3" width="650" height="28.5" fill="#f472b6" fill-opacity="0.14" stroke="#f472b6" stroke-dasharray="3 3" stroke-width="0.8"/>
+          <text x="65" y="117" font-size="9" fill="#db2777" font-weight="600">Phenolphthalein Transition Zone (pH 8.2â€“10.0)</text>
+
+          <!-- X Axis Ticks and Labels (mL NaOH added) -->
+          <line x1="55" y1="225" x2="55" y2="231" stroke="var(--line)" stroke-width="1.5"/>
+          <text x="55" y="243" text-anchor="middle" font-size="10" fill="var(--muted)">0.0</text>
+
+          <line x1="163.3" y1="225" x2="163.3" y2="231" stroke="var(--line)" stroke-width="1.5"/>
+          <text x="163.3" y="243" text-anchor="middle" font-size="10" fill="var(--muted)">1.0</text>
+
+          <line x1="271.7" y1="225" x2="271.7" y2="231" stroke="var(--line)" stroke-width="1.5"/>
+          <text x="271.7" y="243" text-anchor="middle" font-size="10" fill="var(--muted)">2.0</text>
+
+          <line x1="380" y1="225" x2="380" y2="231" stroke="var(--line)" stroke-width="1.5"/>
+          <text x="380" y="243" text-anchor="middle" font-size="10" fill="var(--muted)">3.0</text>
+
+          <line x1="488.3" y1="225" x2="488.3" y2="231" stroke="var(--line)" stroke-width="1.5"/>
+          <text x="488.3" y="243" text-anchor="middle" font-size="10" fill="var(--muted)">4.0</text>
+
+          <line x1="596.7" y1="225" x2="596.7" y2="231" stroke="var(--line)" stroke-width="1.5"/>
+          <text x="596.7" y="243" text-anchor="middle" font-size="10" fill="var(--muted)">5.0</text>
+
+          <!-- Concordant Endpoint Guide Line (5.30 mL) -->
+          <line x1="629.2" y1="35" x2="629.2" y2="225" stroke="var(--green)" stroke-dasharray="4 4" stroke-width="1.4"/>
+          <text x="629.2" y="253" text-anchor="middle" font-size="9.5" font-weight="bold" fill="var(--green)">5.30 mL</text>
+
+          <line x1="705" y1="225" x2="705" y2="231" stroke="var(--line)" stroke-width="1.5"/>
+          <text x="705" y="243" text-anchor="middle" font-size="10" fill="var(--muted)">6.0 mL</text>
+
+          <!-- Trial 1 Curve (Coarse 0.5 mL) -->
+          <path d="M 109.2,189.9 L 163.3,184.3 L 217.5,180.7 L 271.7,177.8 L 325.8,175.1 L 380,172.4 L 434.2,169.7 L 488.3,166.6 L 542.5,162.5 L 596.7,154.9 L 650.8,65.2" fill="none" stroke="#818cf8" stroke-width="2" stroke-dasharray="4 3"/>
+          <circle cx="650.8" cy="65.2" r="4.5" fill="#818cf8"/>
+
+          <!-- Trial 2 Curve (Fine 0.1 mL) -->
+          <path d="M 65.8,201.2 L 76.7,196.5 L 87.5,193.6 L 98.3,191.6 L 109.2,190.2 L 120,188.4 L 130.8,187.3 L 141.7,186.2 L 152.5,185.3 L 163.3,184.3 L 174.2,183.5 L 185,182.7 L 195.8,182.1 L 206.7,181.3 L 217.5,180.7 L 228.3,180 L 239.2,179.6 L 250,178.9 L 260.8,178.3 L 271.7,177.8 L 282.5,177.2 L 293.3,176.7 L 304.2,176.1 L 315,175.6 L 325.8,175.1 L 336.7,174.6 L 347.5,174 L 358.3,173.5 L 369.2,173.1 L 380,172.4 L 390.8,172 L 401.7,171.5 L 412.5,170.8 L 423.3,170.2 L 434.2,169.7 L 445,169.1 L 455.8,168.6 L 466.7,167.8 L 477.5,167.2 L 488.3,166.6 L 499.2,165.8 L 510,165.2 L 520.8,164.5 L 531.7,164.2 L 542.5,163.4 L 553.3,162.5 L 564.2,161.4 L 575,160.1 L 585.8,158.7 L 596.7,157.1 L 607.5,154.9 L 618.3,151.8 L 629.2,146.8 L 640,89.3" fill="none" stroke="#0ea5e9" stroke-width="2"/>
+          <circle cx="629.2" cy="146.8" r="4" fill="#0ea5e9"/>
+
+          <!-- Trial 3 Curve (Analytical 0.05 mL) -->
+          <path d="M 60.4,205.5 L 65.8,201.2 L 71.2,198.6 L 76.7,196.5 L 82.1,194.9 L 87.5,193.6 L 92.9,192.5 L 98.3,191.6 L 103.8,190.6 L 109.2,189.9 L 114.6,189.2 L 120,188.4 L 125.4,187.8 L 130.8,187.3 L 136.2,186.7 L 141.7,186.2 L 147.1,185.7 L 152.5,185.3 L 157.9,184.8 L 163.3,184.3 L 168.8,184 L 174.2,183.5 L 179.6,183.2 L 185,182.7 L 190.4,182.4 L 195.8,182.1 L 201.2,181.8 L 206.7,181.3 L 212.1,181 L 217.5,180.7 L 222.9,180.4 L 228.3,180 L 233.7,179.7 L 239.2,179.6 L 244.6,179.2 L 250,178.9 L 255.4,178.6 L 260.8,178.3 L 266.2,178 L 271.7,177.8 L 277.1,177.5 L 282.5,177.2 L 287.9,176.9 L 293.3,176.7 L 298.8,176.4 L 304.2,176.1 L 309.6,175.9 L 315,175.6 L 320.4,175.3 L 325.8,175.1 L 331.2,174.8 L 336.7,174.6 L 342.1,174.3 L 347.5,174 L 352.9,173.9 L 358.3,173.5 L 363.8,173.2 L 369.2,173.1 L 374.6,172.8 L 380,172.4 L 385.4,172.3 L 390.8,172 L 396.2,171.6 L 401.7,171.5 L 407.1,171.2 L 412.5,170.8 L 417.9,170.5 L 423.3,170.4 L 428.8,170.1 L 434.2,169.7 L 439.6,169.4 L 445,169.1 L 450.4,168.8 L 455.8,168.5 L 461.2,168.2 L 466.7,167.8 L 472.1,167.5 L 477.5,167.2 L 482.9,166.9 L 488.3,166.6 L 493.7,166.3 L 499.2,165.8 L 504.6,165.5 L 510,165.2 L 515.4,164.7 L 520.8,164.2 L 526.2,163.9 L 531.7,163.4 L 537.1,162.9 L 542.5,162.5 L 547.9,161.8 L 553.3,161.4 L 558.8,160.7 L 564.2,160.1 L 569.6,159.4 L 575,158.7 L 580.4,157.9 L 585.8,157.1 L 591.2,156 L 596.7,154.9 L 602.1,153.4 L 607.5,151.8 L 612.9,149.8 L 618.3,146.8 L 623.8,141.4 L 629.2,89.3" fill="none" stroke="var(--green)" stroke-width="2.6"/>
+          <circle cx="629.2" cy="89.3" r="5" fill="var(--green-emerald)" stroke="#ffffff" stroke-width="1.5"/>
+
+          <!-- Callout Box -->
+          <rect x="360" y="32" width="310" height="52" rx="6" fill="var(--paper)" stroke="var(--green-tint-border)" stroke-width="1"/>
+          <text x="372" y="48" font-size="10.5" font-weight="bold" fill="var(--ink)">Concordant Endpoint: 5.300 mL</text>
+          <text x="372" y="62" font-size="9" fill="var(--muted)">Trial 2 &amp; 3: 0.9434 M (Pink Endpoint)</text>
+          <text x="372" y="74" font-size="9" fill="var(--green)">Mean = 0.9320 M &middot; %RSD = 2.13% (n=3)</text>
+
+          <!-- Legend -->
+          <line x1="60" y1="46" x2="80" y2="46" stroke="var(--green)" stroke-width="2.5"/>
+          <text x="85" y="49" font-size="8.5" fill="var(--ink)">Trial 3 (0.05 mL step Â· 106 pts)</text>
+
+          <line x1="60" y1="58" x2="80" y2="58" stroke="#0ea5e9" stroke-width="2"/>
+          <text x="85" y="61" font-size="8.5" fill="var(--ink)">Trial 2 (0.10 mL step Â· 53 pts)</text>
+
+          <line x1="60" y1="70" x2="80" y2="70" stroke="#818cf8" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="85" y="73" font-size="8.5" fill="var(--muted)">Trial 1 (0.50 mL step Â· 11 pts)</text>
+        </svg>
+      ,
+      tab1Content: 
+        <h4 style="margin: 0 0 0.8rem; font-size: 0.95rem; color: var(--ink);">Three-Trial Potentiometric &amp; Visual Phenolphthalein Titration Dataset</h4>
+        <div class="evidence-table-wrap">
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Analytical Parameter</th>
+                <th>Trial 1 (Coarse)</th>
+                <th>Trial 2 (Fine Increments)</th>
+                <th>Trial 3 (Analytical)</th>
+                <th>Concordance / Limit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Increment Step Size</strong></td>
+                <td>0.500 mL</td>
+                <td>0.100 mL</td>
+                <td>0.050 mL</td>
+                <td>Resolution Sensitivity Study</td>
+              </tr>
+              <tr>
+                <td><strong>Number of Additions</strong></td>
+                <td>11 additions</td>
+                <td>53 additions (54 log rows)</td>
+                <td>106 additions</td>
+                <td>171 Total Data Points</td>
+              </tr>
+              <tr>
+                <td><strong>Primary Standard KHP Aliquot</strong></td>
+                <td>10.000 mL (0.500 M)</td>
+                <td>10.000 mL (0.500 M)</td>
+                <td>10.000 mL (0.500 M)</td>
+                <td>5.000 mmol KHP / trial</td>
+              </tr>
+              <tr>
+                <td><strong>Initial Flask Contents</strong></td>
+                <td>10.300 mL (10.0 mL KHP + 0.3 mL Ind.)</td>
+                <td>10.300 mL (10.0 mL KHP + 0.3 mL Ind.)</td>
+                <td>10.300 mL (10.0 mL KHP + 0.3 mL Ind.)</td>
+                <td>Fixed Standard Preparation</td>
+              </tr>
+              <tr>
+                <td><strong>Initial Burette Charge</strong></td>
+                <td>10.000 mL</td>
+                <td>10.000 mL</td>
+                <td>10.000 mL</td>
+                <td>50 mL Class A Burette</td>
+              </tr>
+              <tr>
+                <td><strong>Final Burette Reading</strong></td>
+                <td>4.500 mL</td>
+                <td>4.700 mL</td>
+                <td>4.700 mL</td>
+                <td><span class="status-pill-pass">âœ“ Exact Match (T2 &amp; T3)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Observed Endpoint Titre</strong></td>
+                <td><strong>5.500 mL</strong></td>
+                <td><strong>5.300 mL</strong></td>
+                <td><strong>5.300 mL</strong></td>
+                <td><strong>Î” = 0.000 mL</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Endpoint Visual Colour</strong></td>
+                <td>Pink (Overshot)</td>
+                <td>Pink (Sharp Endpoint)</td>
+                <td>Pink (Sharp Endpoint)</td>
+                <td>Phenolphthalein Transition</td>
+              </tr>
+              <tr>
+                <td><strong>Endpoint pH Reading</strong></td>
+                <td>12.09</td>
+                <td>6.94 â†’ 10.57 (post-ep)</td>
+                <td>10.57</td>
+                <td>Potentiometric Signal</td>
+              </tr>
+              <tr>
+                <td><strong>Calculated NaOH Molarity</strong></td>
+                <td><strong>0.9091 mol/L</strong></td>
+                <td><strong>0.9434 mol/L</strong></td>
+                <td><strong>0.9434 mol/L</strong></td>
+                <td><strong>Mean = 0.9320 M</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top: 1.1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+          <div style="background: var(--paper-alt); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; font-size: 0.82rem; line-height: 1.5;">
+            <strong style="color: var(--green); display: block; margin-bottom: 4px;">ðŸ“ˆ Statistical Precision Evaluation (n=3)</strong>
+            <div>Mean Concentration ($\bar{x}$): <strong>0.9320 mol/L</strong> (0.931961 M)</div>
+            <div>Sample Standard Deviation ($): <strong>0.0198 mol/L</strong></div>
+            <div>Relative Standard Deviation (%RSD): <strong>2.13%</strong></div>
+            <div>Mean Titre: <strong>5.367 mL</strong></div>
+          </div>
+          <div style="background: var(--paper-alt); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; font-size: 0.82rem; line-height: 1.5;">
+            <strong style="color: var(--ink); display: block; margin-bottom: 4px;">ðŸ” Increment Resolution Effect</strong>
+            <div>Trial 1 with coarse 0.500 mL increments overshot by <strong>+0.200 mL (+3.77%)</strong> due to rapid titrant delivery. Decreasing the increment to 0.100 mL and 0.050 mL achieved identical titres (5.300 mL), confirming the true equivalence boundary.</div>
+          </div>
+        </div>
+      ,
+      tab2Content: 
+        <h4 style="margin: 0 0 0.8rem; font-size: 0.95rem; color: var(--ink);">Stoichiometric Reaction Kinetics &amp; Double Volume-Balance Reconciliation</h4>
+        <div style="background: var(--paper-alt); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin-bottom: 1.2rem; font-size: 0.85rem; line-height: 1.55;">
+          <strong style="color: var(--ink); font-size: 0.9rem;">1. Stoichiometric Reaction (1:1 Molar Ratio):</strong><br>
+          <code style="display: block; margin: 6px 0; padding: 8px 12px; background: var(--paper); border-radius: 6px; border: 1px solid var(--line); font-family: ui-monospace, monospace; color: var(--green);">
+            KHCâ‚ˆHâ‚„Oâ‚„ (aq) + NaOH (aq) â”€â”€&gt; KNaCâ‚ˆHâ‚„Oâ‚„ (aq) + Hâ‚‚O (l)
+          </code>
+          Potassium hydrogen phthalate (KHP, Mw = 204.22 g/mol) is a high-purity, non-hygroscopic monoprotic primary standard acid. One mole of KHP neutralizes exactly one mole of NaOH:
+          <div style="margin-top: 6px; font-family: ui-monospace, monospace;">
+            <strong>M(NaOH) = [M(KHP) Ã— V(KHP)] / V(titre) = (0.500 M Ã— 10.000 mL) / V(titre) = 5.000 mmol / V(titre)</strong>
+          </div>
+        </div>
+
+        <h4 style="margin: 0 0 0.8rem; font-size: 0.95rem; color: var(--ink);">2. Independent Double Volume-Balance Verification (Zero Discrepancy)</h4>
+        <div class="evidence-table-wrap">
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Trial Number</th>
+                <th>Method A: Burette Volume Dispensed<br><small>(Initial 10.000 mL - Final Burette)</small></th>
+                <th>Method B: Recipient Flask Expansion<br><small>(Final Flask Vol - Initial 10.300 mL)</small></th>
+                <th>Discrepancy (Î”)</th>
+                <th>Reconciliation Audit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Trial 1</strong></td>
+                <td>10.000 - 4.500 = <strong>5.500 mL</strong></td>
+                <td>15.800 - 10.300 = <strong>5.500 mL</strong></td>
+                <td>0.000 mL</td>
+                <td><span class="status-pill-pass">âœ“ 100% Agreement</span></td>
+              </tr>
+              <tr>
+                <td><strong>Trial 2</strong></td>
+                <td>10.000 - 4.700 = <strong>5.300 mL</strong></td>
+                <td>15.600 - 10.300 = <strong>5.300 mL</strong></td>
+                <td>0.000 mL</td>
+                <td><span class="status-pill-pass">âœ“ 100% Agreement</span></td>
+              </tr>
+              <tr>
+                <td><strong>Trial 3</strong></td>
+                <td>10.000 - 4.700 = <strong>5.300 mL</strong></td>
+                <td>15.600 - 10.300 = <strong>5.300 mL</strong></td>
+                <td>0.000 mL</td>
+                <td><span class="status-pill-pass">âœ“ 100% Agreement</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      ,
+      tab3Content: 
+        <h4 style="margin: 0 0 0.8rem; font-size: 0.95rem; color: var(--ink);">ALCOA+ Data Integrity Principles &amp; Scientific Review</h4>
+        <div class="evidence-table-wrap">
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>ALCOA+ Principle</th>
+                <th>Implementation in Practical 01</th>
+                <th>Compliance Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Attributable</strong></td>
+                <td>Conducted, logged, and audited by Shyam Raj using ChemCollective virtual bench environment.</td>
+                <td><span class="status-pill-pass">âœ“ Verified</span></td>
+              </tr>
+              <tr>
+                <td><strong>Legible &amp; Permanent</strong></td>
+                <td>All 171 stepwise titration additions archived in structured CSV, Excel workbooks, and ELN PDF.</td>
+                <td><span class="status-pill-pass">âœ“ Verified</span></td>
+              </tr>
+              <tr>
+                <td><strong>Contemporaneous</strong></td>
+                <td>Readings recorded sequentially at each increment with real-time burette and pH tracking.</td>
+                <td><span class="status-pill-pass">âœ“ Verified</span></td>
+              </tr>
+              <tr>
+                <td><strong>Original</strong></td>
+                <td>Primary virtual sensor readings maintained in raw CSV format without post-hoc curve fitting.</td>
+                <td><span class="status-pill-pass">âœ“ Verified</span></td>
+              </tr>
+              <tr>
+                <td><strong>Accurate &amp; Qualified</strong></td>
+                <td>Double volume-balance check confirmed (0.000 mL discrepancy); simulator qualifications fully stated.</td>
+                <td><span class="status-pill-pass">âœ“ Verified</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 style="margin: 1.4rem 0 0.8rem; font-size: 0.95rem; color: var(--ink);">Laboratory Evidence Gallery (Primary Experimental Artifacts)</h4>
+        <div class="evidence-gallery-grid">
+          <div class="evidence-gallery-card">
+            <img src="Images/khp-titration/apparatus-stockroom.png" alt="ChemCollective Apparatus & Stockroom" class="evidence-gallery-img">
+            <div class="evidence-gallery-caption">
+              <span class="evidence-gallery-step">Step 1: Setup</span>
+              Analytical stockroom setup with 0.500 M KHP standard, phenolphthalein, and NaOH reagent.
+            </div>
+          </div>
+
+          <div class="evidence-gallery-card">
+            <img src="Images/khp-titration/khp-transfer.png" alt="KHP Aliquot Transfer" class="evidence-gallery-img">
+            <div class="evidence-gallery-caption">
+              <span class="evidence-gallery-step">Step 2: Aliquot Transfer</span>
+              Volumetric transfer of exactly 10.000 mL primary standard KHP (5.000 mmol) into 250 mL flask.
+            </div>
+          </div>
+
+          <div class="evidence-gallery-card">
+            <img src="Images/khp-titration/indicator-addition.png" alt="Phenolphthalein Indicator Addition" class="evidence-gallery-img">
+            <div class="evidence-gallery-caption">
+              <span class="evidence-gallery-step">Step 3: Indicator</span>
+              Addition of 0.300 mL phenolphthalein indicator solution yielding initial flask volume of 10.300 mL.
+            </div>
+          </div>
+
+          <div class="evidence-gallery-card">
+            <img src="Images/khp-titration/burette-prep.png" alt="Burette Preparation" class="evidence-gallery-img">
+            <div class="evidence-gallery-caption">
+              <span class="evidence-gallery-step">Step 4: Burette Charge</span>
+              Standardized charging of 50 mL burette with exactly 10.000 mL NaOH titrant for every trial.
+            </div>
+          </div>
+
+          <div class="evidence-gallery-card">
+            <img src="Images/khp-titration/ph-initial.jpg" alt="Initial Meniscus and pH" class="evidence-gallery-img">
+            <div class="evidence-gallery-caption">
+              <span class="evidence-gallery-step">Step 5: Initial Reading</span>
+              Verification of initial burette meniscus (10.000 mL) and initial analyte pH (3.50â€“4.22).
+            </div>
+          </div>
+
+          <div class="evidence-gallery-card">
+            <img src="Images/khp-titration/pink-endpoint.jpg" alt="Pink Titration Endpoint" class="evidence-gallery-img">
+            <div class="evidence-gallery-caption">
+              <span class="evidence-gallery-step">Step 6: Endpoint</span>
+              Visual confirmation of persistent faint pink endpoint and final burette reading (4.700 mL).
+            </div>
+          </div>
+        </div>
+      ,
+      tab4Content: 
+        <h4 style="margin: 0 0 0.8rem; font-size: 0.95rem; color: var(--ink);">Official Experimental Deliverables &amp; Master Documentation</h4>
+        <div class="evidence-download-row">
+          <div class="evidence-download-card">
+            <div class="evidence-download-info">
+              <h5>Electronic Lab Notebook (ELN) Report</h5>
+              <p>Official compiled PDF report covering objectives, trial records, arithmetic checks, and QA/QC notes.</p>
+            </div>
+            <a href="docs/Practical_01_ELN_Report_Shyam_Raj.pdf" target="_blank" class="evidence-download-btn">
+              <span>ðŸ“„ View PDF</span>
+            </a>
+          </div>
+
+          <div class="evidence-download-card">
+            <div class="evidence-download-info">
+              <h5>Verified Master Calculation Workbook</h5>
+              <p>Excel workbook with all 171 trial additions, dynamic formulas, and automated statistical calculations.</p>
+            </div>
+            <a href="docs/Practical_01_Verified_Master_Workbook.xlsx" download class="evidence-download-btn">
+              <span>ðŸ“Š Download .XLSX</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="background: var(--paper-alt); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin-top: 1.2rem; font-size: 0.82rem; line-height: 1.55;">
+          <strong style="color: var(--green); display: block; margin-bottom: 6px;">ðŸ“‹ Standard Operating Procedure (SOP-QC-TIT-2026-001) Summary:</strong>
+          <ol style="margin: 0; padding-left: 1.2rem;">
+            <li><strong>Primary Standard Handling:</strong> Use high-purity potassium hydrogen phthalate (KHP, Mw = 204.22 g/mol) dried at 110 Â°C for 2 hours to remove adsorbed moisture.</li>
+            <li><strong>Increment Strategy:</strong> Run an initial exploratory trial (0.500 mL increments) to locate approximate equivalence, followed by replicate precision trials (0.100 mL and 0.050 mL increments) to accurately pin the equivalence inflection.</li>
+            <li><strong>Volume Balance Protocol:</strong> Record both burette reading and total recipient vessel volume to ensure independent verification of liquid delivery.</li>
+            <li><strong>Scientific Transparency:</strong> Clearly distinguish between virtual simulated observations and physical wet-bench qualifications.</li>
+          </ol>
+        </div>
+      
+    },
     'hplc-assay': {
       protocolNo: 'SOP-QC-VAL-2026-042',
       rev: 'Rev 03 (Effective 2026)',
@@ -1012,8 +1396,21 @@
     document.getElementById('tab-validation').innerHTML = data.tab3Content;
     document.getElementById('tab-template').innerHTML = data.tab4Content;
 
-    // Reset Tabs to first tab
+    // Update tab button labels if customized
     const tabBtns = modalDialog.querySelectorAll('.modal-tab-btn');
+    if (data.tabLabels && data.tabLabels.length === 4 && tabBtns.length === 4) {
+      tabBtns[0].innerHTML = data.tabLabels[0];
+      tabBtns[1].innerHTML = data.tabLabels[1];
+      tabBtns[2].innerHTML = data.tabLabels[2];
+      tabBtns[3].innerHTML = data.tabLabels[3];
+    } else if (tabBtns.length === 4) {
+      tabBtns[0].innerHTML = '<span>ðŸ“Š</span> Analytical Profile &amp; SST';
+      tabBtns[1].innerHTML = '<span>âš™ï¸</span> SOP &amp; Parameters';
+      tabBtns[2].innerHTML = '<span>âœ…</span> Validation Matrix (ICH)';
+      tabBtns[3].innerHTML = '<span>ðŸ“</span> Lab Blueprint Guide';
+    }
+
+    // Reset Tabs to first tab
     tabBtns.forEach((b, i) => {
       if (i === 0) b.classList.add('active');
       else b.classList.remove('active');
