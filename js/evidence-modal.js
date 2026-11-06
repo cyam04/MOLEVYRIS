@@ -1767,7 +1767,6 @@
   // ---------------------------------------------------------
   // 5. Modal Lifecycle & Dialog Management
   // ---------------------------------------------------------
-  let modalDialog = null;
 
   function initModal() {
     modalDialog = document.getElementById('evidenceModal');
