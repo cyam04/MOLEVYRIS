@@ -1958,7 +1958,32 @@
         if (activePane) activePane.classList.add('active');
       });
     });
+
+    // Connect trigger buttons on the main page
+    document.querySelectorAll('.open-evidence-btn').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const projectId = this.getAttribute('data-project-id');
+        if (projectId) {
+          openModal(projectId);
+        }
+      });
+    });
   }
+
+  // Delegated click listener across the entire document (bulletproof for all evidence buttons)
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.open-evidence-btn');
+    if (btn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const projectId = btn.getAttribute('data-project-id');
+      if (projectId) {
+        openModal(projectId);
+      }
+    }
+  });
 
   function openModal(projectId) {
     if (!modalDialog) initModal();
